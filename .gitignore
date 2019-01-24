@@ -1,5 +1,7 @@
 Library/*
 Temp/*
+Packages/manifest.json
+ProjectSettings/*
 obj/
 
 **/.vscode/
