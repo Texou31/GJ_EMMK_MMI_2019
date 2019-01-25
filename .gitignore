@@ -2,6 +2,7 @@ Library/*
 Temp/*
 Packages/manifest.json
 ProjectSettings/*
+!ProjectSettings/InputManager.asset
 obj/
 
 **/.vscode/
