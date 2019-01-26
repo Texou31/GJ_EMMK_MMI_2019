@@ -32,43 +32,44 @@ public class TapisController : MonoBehaviour
         }
     }
 
-    public bool CanPutDown() // direction et position
+    public bool CanPutDown(Vector2 playerPosition, Vector2 direction) // direction et position
     {
+        Debug.DrawRay(playerPosition, direction * length);
+        RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, length * 1000, LayerMask.GetMask("Obstacle"));
         
-        return true;
+        return (hit.collider == null);
     }
 
-    public void PutDown()
+    public void PutDown(Vector2 playerPosition, Vector2 direction)
     {
         spriteRenderer.enabled = true;// Le rendre visible
         EnableCollision();// réactiver ses collisions
         holder = null;// Update son holder et isheld
-        Snap();
+        Snap(playerPosition, direction);
         CoverHoles();
     }
 
     private void PutToInventory(GameObject newHolder)
     {
-        Debug.Log("On la mis dans l'inventaire !");
         holder = newHolder; // dit qu'il est tenu et par qui
         DisableCollision(); // empecher ses collisions
         spriteRenderer.enabled = false; // le faire disparaitre
         UncoverHoles();
     }
 
-    private void Snap()
+    private void Snap(Vector2 position, Vector2 direction)
     {
-        Debug.Log("TODO !");
+        Debug.Log("Snap TODO !");
     }
 
     private void CoverHoles()
     {
-        Debug.Log("TODO !");
+        Debug.Log("CoverHoles TODO !");
     }
 
     private void UncoverHoles()
     {
-        Debug.Log("TODO !");
+        Debug.Log("UncoverHoles TODO !");
     }
     
 

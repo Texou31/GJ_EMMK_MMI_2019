@@ -69,9 +69,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (pickedUpTapis != null)
         {
-            if (pickedUpTapis.CanPutDown())
+            if (pickedUpTapis.CanPutDown(this.gameObject.transform.position, GetDirection()))
             {
-                pickedUpTapis.PutDown();
+                pickedUpTapis.PutDown(this.gameObject.transform.position, GetDirection());
                 isHoldingObject = false;
                 pickedUpTapis = null;
             } else
@@ -87,6 +87,20 @@ public class PlayerInteraction : MonoBehaviour
         // Play interdiction sound
     }
 
+    private Vector3 GetDirection()
+    {
+        switch (GetComponent<PlayerMovement>().GetDirection())
+        {
+            case "up":
+                return Vector2.up;
+            case "down":
+                return Vector2.down;
+            case "left":
+                return Vector2.left;
+            default: // default right
+                return Vector2.right;
+        }
+    }
     #endregion
 
 }

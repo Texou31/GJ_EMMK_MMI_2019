@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    public string getDirection()
+    public string GetDirection()
     {
         return direction;
     }
