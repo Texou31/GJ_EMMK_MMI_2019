@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     private Vector2 lastMovement = Vector2.zero;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator animator;
 
     public string direction;
 
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Start () {
         rb = GetComponentInParent<Rigidbody2D> ();
         sr = GetComponentInParent<SpriteRenderer> ();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         Move ();
     }
 
-    public string getDirection()
+    public string GetDirection()
     {
         return direction;
     }
@@ -85,49 +87,48 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void UpdateSprites () {
-        if (movement.y > 0.1f) // Up enabled
+    private void UpdateSprites()
+    {
+        if(movement.magnitude > 0.2)
         {
-            sr.sprite = Back;
-            sr.flipX = false;
-
-            direction = "up";
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            {
+                if (movement.x > 0.1)
+                {
+                    animator.SetTrigger("GoRight");
+                }
+                else if (movement.x < 0.1)
+                {
+                    animator.SetTrigger("GoLeft");
+                }
+            }
+            else
+            {
+                if (movement.y > 0.1)
+                {
+                    animator.SetTrigger("GoUp");
+                }
+                else if (movement.y < 0.1)
+                {
+                    animator.SetTrigger("GoDown");
+                }
+            }
         }
-        else if (movement.y < -0.1f) // Down enabled
-        {
-            sr.sprite = Face;
-            sr.flipX = false;
 
-            direction = "down";
+        animator.SetFloat("Speed", movement.magnitude / moveSpeed);
+      }
+
+      private void OnTriggerEnter2D (Collider2D other) {
+          if (other.gameObject.tag == "Ice") {
+              isSliding = true;
+          }
+      }
+
+      private void OnTriggerExit2D (Collider2D other) {
+          if (other.gameObject.tag == "Ice") {
+              isSliding = false;
+          }
         }
-
-        if (movement.x > 0.1f) // Right enabled
-        {
-            sr.sprite = Left;
-            sr.flipX = true;
-
-            direction = "right";
-        }
-        else if (movement.x < -0.1f)    // Left enabled
-        {
-            sr.sprite = Left;
-            sr.flipX = false;
-
-            direction = "left";
-        }
-    }
-
-    private void OnTriggerEnter2D (Collider2D other) {
-        if (other.gameObject.tag == "Ice") {
-            isSliding = true;
-        }
-    }
-
-    private void OnTriggerExit2D (Collider2D other) {
-        if (other.gameObject.tag == "Ice") {
-            isSliding = false;
-        }
-    }
 
     #endregion
 
