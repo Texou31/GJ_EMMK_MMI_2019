@@ -24,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponentInParent<Rigidbody2D>();
+        sr = GetComponentInParent<SpriteRenderer>();
     }
 
     // Update is called once per frame
