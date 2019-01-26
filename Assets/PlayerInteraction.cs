@@ -9,11 +9,10 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject target;
     private bool isSelected = false;
 
+    private bool isTryToDrop = false;
+
     // List of interactable objects (their controller scripts)
     private TapisController tapis;
-
-    private bool isWaiting = false;
-    private int frame = 0;
 
     private void Update()
     {
@@ -25,14 +24,23 @@ public class PlayerInteraction : MonoBehaviour
             }
             else
             {
-                Debug.Log("j'ai appuyé sur le bouton pour lâcher");
-                TryToDrop(target);
-            }
-        }
+                if (tapis != null)
+                {
+                    isTryToDrop = true;
+                    tapis.EnableCollision();
+                }
+                    //TryToDrop(target);
 
-        if (isWaiting)
+                }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isTryToDrop)
         {
-            frame++;
+            TryToDrop(target);
+            isTryToDrop = false;
         }
     }
 
@@ -74,13 +82,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (tapis != null)
         {
-            tapis.EnableCollision();
-
-            isWaiting = true;
-           // yield return new WaitUntil(() => frame >= 1); // Need to wait until collisions are updated
-
-            isWaiting = false;
-            frame = 0;
+            //tapis.EnableCollision();
 
             Debug.Log("in tryToDrop before if : isColliding " + tapis.isColliding);
             if (!tapis.isColliding)
