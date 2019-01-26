@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-
+    #region PRIVATE FUNCTIONS
     private void Move()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
@@ -105,4 +105,7 @@ public class PlayerMovement : MonoBehaviour
             sr.flipX = false;
         }
     }
+
+    #endregion
+
 }

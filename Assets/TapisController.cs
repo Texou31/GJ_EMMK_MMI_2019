@@ -11,6 +11,7 @@ public class TapisController : MonoBehaviour
     void Start()
     {
         isHold = false;
+        holder = null;
     }
 
     public void Interact(GameObject newHolder)
@@ -18,6 +19,7 @@ public class TapisController : MonoBehaviour
         if (!isHold)
         {
             SetNewHolder(newHolder);
+            return;
         }
 
         if(newHolder == holder)
