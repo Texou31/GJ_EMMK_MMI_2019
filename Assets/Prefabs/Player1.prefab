@@ -42,8 +42,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb26383f9506fc4458ec1adc7a3e95a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   moveSpeed: 2
   rightCol: {fileID: 3497225053236906951}
   leftCol: {fileID: 7390307624509064200}
@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 6659964855021353189}
   - component: {fileID: 6338537199495655696}
   - component: {fileID: 8820445994151124203}
+  - component: {fileID: 5334209056899229302}
+  - component: {fileID: 4837582023569379042}
   - component: {fileID: 8708551441617368273}
   m_Layer: 0
   m_Name: Player1
@@ -103,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9067334864224536833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.139, y: 0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5830065462060655091}
@@ -299,6 +301,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5334209056899229302
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067334864224536833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6aaf8cfa0236d949a646891d1c2cd0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage:
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4837582023569379042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067334864224536833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb26383f9506fc4458ec1adc7a3e95a5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  moveSpeed: 2
+  rightCol: {fileID: 3497225053236906951}
+  leftCol: {fileID: 7390307624509064200}
+  upCol: {fileID: 7339540124531310232}
+  downCol: {fileID: 1909506848448727097}
+  horizontalAxis: Horizontal1
+  verticalAxis: Vertical1
+  Face: {fileID: 21300000, guid: 3a148cd436835dc4193538ea4d70b140, type: 3}
+  Back: {fileID: 21300002, guid: 3a148cd436835dc4193538ea4d70b140, type: 3}
+  Left: {fileID: 21300004, guid: 3a148cd436835dc4193538ea4d70b140, type: 3}
 --- !u!114 &8708551441617368273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +352,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f9e752959a5a6468f21209eb0a32f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   InteractAxeName: Interact1
