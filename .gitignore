@@ -5,6 +5,8 @@ ProjectSettings/*
 !ProjectSettings/InputManager.asset
 obj/
 
+.collabignore
+
 **/.vscode/
 **/.vs
 
