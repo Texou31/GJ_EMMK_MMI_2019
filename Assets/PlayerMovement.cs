@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
+    public string direction;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+    }
+
+    public string getDirection()
+    {
+        return direction;
     }
 
     #region PRIVATE FUNCTIONS
@@ -87,22 +94,30 @@ public class PlayerMovement : MonoBehaviour
         {
             sr.sprite = Back;
             sr.flipX = false;
+
+            direction = "up";
         }
         else if (movement.y < -0.1f) // Down enabled
         {
             sr.sprite = Face;
             sr.flipX = false;
+
+            direction = "down";
         }
 
         if (movement.x > 0.1f)  // Right enabled
         {
             sr.sprite = Left;
             sr.flipX = true;
+
+            direction = "right";
         }
         else if (movement.x < -0.1f)    // Left enabled
         {
             sr.sprite = Left;
             sr.flipX = false;
+
+            direction = "left";
         }
     }
 
