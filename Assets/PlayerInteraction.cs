@@ -55,7 +55,7 @@ public class PlayerInteraction : MonoBehaviour
         tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
-            Debug.Log("Interact with tapis");
+            //Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
             isSelected = true;
         }
@@ -67,7 +67,7 @@ public class PlayerInteraction : MonoBehaviour
         target = null;
         AllScriptsToNull();
         isSelected = false;
-        Debug.Log("Deselection !");
+        //Debug.Log("Deselection !");
     }
 
     private void AllScriptsToNull()
