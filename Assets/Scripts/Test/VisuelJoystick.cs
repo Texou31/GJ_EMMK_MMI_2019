@@ -7,7 +7,7 @@ public class VisuelJoystick : MonoBehaviour
     [Range(1, 2)]
     public int player;
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Vector3 target = new Vector3();
         if(player == 1)
