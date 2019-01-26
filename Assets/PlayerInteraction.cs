@@ -6,33 +6,34 @@ public class PlayerInteraction : MonoBehaviour
 {
     public string InteractAxeName;
 
-    private GameObject target;
-    private bool isSelected = false;
+    public bool isHoldingObject = false;
+
+    private GameObject target = null;
 
     // List of interactable objects (their controller scripts)
-    private TapisController tapis;
+    private TapisController pickedUpTapis = null;
+    
 
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
         {
-            if (target != null && !isSelected)
+            if (target != null && !isHoldingObject)
             {
                 InteractWithTarget();
             }
-            else
+            else if (isHoldingObject)
             {
-                Deselect();
+                TryToDrop();
             }
         }
     }
-
 
     #region COLLIDERS
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (target == null)
+        if (target == null) // Cause possible de bug // TODO le check
         {
             target = col.gameObject;
         }
@@ -41,7 +42,10 @@ public class PlayerInteraction : MonoBehaviour
     // Prevent trigger after leaving trigger zone
     private void OnTriggerExit2D(Collider2D col)
     {
-        target = null;
+        if(target == col.gameObject)
+        {
+            target = null;
+        }
     }
 
     #endregion
@@ -52,29 +56,65 @@ public class PlayerInteraction : MonoBehaviour
         /*
          * Interact with the target object. Get component to know what to do.
          */
-        tapis = target.GetComponent<TapisController>();
+        TapisController tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
+<<<<<<< HEAD
             //Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
             isSelected = true;
+=======
+            tapis.PickUp(this.gameObject);
+            isHoldingObject = true;
+            pickedUpTapis = tapis;
+>>>>>>> carpet
         }
     }
 
-    void Deselect()
+    private void TryToDrop()
     {
+<<<<<<< HEAD
         tapis.StopInteract();
         target = null;
         AllScriptsToNull();
         isSelected = false;
         //Debug.Log("Deselection !");
+=======
+        if (pickedUpTapis != null)
+        {
+            if (pickedUpTapis.CanPutDown(this.gameObject.transform.position, GetDirection()))
+            {
+                pickedUpTapis.PutDown(this.gameObject.transform.position, GetDirection());
+                isHoldingObject = false;
+                pickedUpTapis = null;
+            } else
+            {
+                FailToDrop();
+            }
+        }
+>>>>>>> carpet
     }
 
-    private void AllScriptsToNull()
+    public void FailToDrop()
     {
-        tapis = null;
+        Debug.Log("failToDrop");
+        // Play interdiction sound
     }
 
+    private Vector3 GetDirection()
+    {
+        switch (GetComponent<PlayerMovement>().GetDirection())
+        {
+            case "up":
+                return Vector2.up;
+            case "down":
+                return Vector2.down;
+            case "left":
+                return Vector2.left;
+            default: // default right
+                return Vector2.right;
+        }
+    }
     #endregion
 
 }
