@@ -7,9 +7,11 @@ public class SceneController : MonoBehaviour
 {
     public string nextSceneName;
 
+    public static SceneController instance;
+
     private string menuSceneName = "GIVE ME A REAL NAME"; //TODO 
 
-    private static SceneController instance;
+    
 
     void Start()
     {
