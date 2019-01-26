@@ -4,50 +4,73 @@ using UnityEngine;
 
 public class TapisController : MonoBehaviour
 {
-    private bool isHeld;
+    public float length;
+
     private GameObject holder;
 
-    private Vector2 rotation = Vector2.zero;
+    
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
 
-    private SpriteRenderer rend;
-
-    public bool isColliding = false; // Is the carpet currently colliding with another object ? Used to trigger TryToDrop() in PlayerInteraction.cs
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        isHeld = false;
         holder = null;
-        rend = GetComponent<SpriteRenderer>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    void FixedUpdate()
+    public void PickUp(GameObject newHolder)
     {
-        isColliding = false;
-    }
-
-    public void Interact(GameObject newHolder)
-    {
-        if (!isHeld)
+        Debug.Log("Call pickUp");
+        if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
         {
-            SetNewHolder(newHolder);
-            DisableCollision();
-            rend.enabled = false;
-
-            return;
+            PutToInventory(newHolder);
         }
     }
 
-    public void StopInteract()
+    public bool CanPutDown() // direction et position
     {
-        if (holder != null)
-        {
-            // Collision was already enabled by PlayerInteraction.cs TryToDrop()
-            rend.enabled = true;
-            setPositionOffset();
-            UnsetHolder();
-        }
+        
+        return true;
     }
+
+    public void PutDown()
+    {
+        spriteRenderer.enabled = true;// Le rendre visible
+        EnableCollision();// réactiver ses collisions
+        holder = null;// Update son holder et isheld
+        Snap();
+        CoverHoles();
+    }
+
+    private void PutToInventory(GameObject newHolder)
+    {
+        Debug.Log("On la mis dans l'inventaire !");
+        holder = newHolder; // dit qu'il est tenu et par qui
+        DisableCollision(); // empecher ses collisions
+        spriteRenderer.enabled = false; // le faire disparaitre
+        UncoverHoles();
+    }
+
+    private void Snap()
+    {
+        Debug.Log("TODO !");
+    }
+
+    private void CoverHoles()
+    {
+        Debug.Log("TODO !");
+    }
+
+    private void UncoverHoles()
+    {
+        Debug.Log("TODO !");
+    }
+    
 
     #region COLLIDERS
 
@@ -61,6 +84,7 @@ public class TapisController : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
+    /*
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag != "Player")
@@ -78,25 +102,10 @@ public class TapisController : MonoBehaviour
             Debug.Log("isColliding " + isColliding);
         }
     }
-
+    */
     #endregion
-
-    private void SetNewHolder(GameObject newHolder)
-    {
-        isHeld = true;
-        holder = newHolder;
-
-        transform.SetParent(holder.transform);
-    }
-
-    private void UnsetHolder()
-    {
-        isHeld = false;
-        holder = null;
-
-        transform.SetParent(null);
-    }
-
+  
+    /*
     private void setPositionOffset()
     {
         PlayerMovement holderMovement = holder.GetComponent<PlayerMovement>();
@@ -119,5 +128,5 @@ public class TapisController : MonoBehaviour
                 transform.localPosition = new Vector3(-1.5f, 0, 0);
                 break;
         }
-    }
+    }*/
 }

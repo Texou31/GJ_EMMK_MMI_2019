@@ -6,41 +6,26 @@ public class PlayerInteraction : MonoBehaviour
 {
     public string InteractAxeName;
 
-    private GameObject target;
-    private bool isSelected = false;
+    public bool isHoldingObject = false;
 
-    private bool isTryToDrop = false;
+    private GameObject target = null;
 
     // List of interactable objects (their controller scripts)
-    private TapisController tapis;
+    private TapisController pickedUpTapis = null;
+    
 
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
         {
-            if (target != null && !isSelected)
+            if (target != null && !isHoldingObject)
             {
                 InteractWithTarget();
             }
-            else
+            else if (isHoldingObject)
             {
-                if (tapis != null)
-                {
-                    isTryToDrop = true;
-                    tapis.EnableCollision();
-                }
-                    //TryToDrop(target);
-
-                }
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (isTryToDrop)
-        {
-            TryToDrop(target);
-            isTryToDrop = false;
+                TryToDrop();
+            }
         }
     }
 
@@ -48,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (target == null)
+        if (target == null) // Cause possible de bug // TODO le check
         {
             target = col.gameObject;
         }
@@ -57,7 +42,10 @@ public class PlayerInteraction : MonoBehaviour
     // Prevent trigger after leaving trigger zone
     private void OnTriggerExit2D(Collider2D col)
     {
-        target = null;
+        if(target == col.gameObject)
+        {
+            target = null;
+        }
     }
 
     #endregion
@@ -68,30 +56,26 @@ public class PlayerInteraction : MonoBehaviour
         /*
          * Interact with the target object. Get component to know what to do.
          */
-        tapis = target.GetComponent<TapisController>();
+        TapisController tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
-            tapis.Interact(this.gameObject);
-            isSelected = true;
+            tapis.PickUp(this.gameObject);
+            isHoldingObject = true;
+            pickedUpTapis = tapis;
         }
     }
 
-    private void TryToDrop(GameObject gameObject)
+    private void TryToDrop()
     {
-        Debug.Log("tryToDrop");
-
-        if (tapis != null)
+        if (pickedUpTapis != null)
         {
-            //tapis.EnableCollision();
-
-            Debug.Log("in tryToDrop before if : isColliding " + tapis.isColliding);
-            if (!tapis.isColliding)
+            if (pickedUpTapis.CanPutDown())
             {
-                Deselect();
-            }
-            else
+                pickedUpTapis.PutDown();
+                isHoldingObject = false;
+                pickedUpTapis = null;
+            } else
             {
-                tapis.DisableCollision();
                 FailToDrop();
             }
         }
@@ -101,27 +85,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("failToDrop");
         // Play interdiction sound
-    }
-
-    private void Deselect()
-    {
-        // when several objects to interact with
-        // try if object is not null before StopInteract
-        // and do that for every object
-        // OR switch on content of target
-        if (tapis != null)
-        {
-            tapis.StopInteract();
-        }
-
-        target = null;
-        AllScriptsToNull();
-        isSelected = false;
-    }
-
-    private void AllScriptsToNull()
-    {
-        tapis = null;
     }
 
     #endregion
