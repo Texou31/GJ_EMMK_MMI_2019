@@ -12,6 +12,9 @@ public class PlayerInteraction : MonoBehaviour
     // List of interactable objects (their controller scripts)
     private TapisController tapis;
 
+    private bool isWaiting = false;
+    private int frame = 0;
+
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
@@ -22,11 +25,16 @@ public class PlayerInteraction : MonoBehaviour
             }
             else
             {
-                Deselect();
+                Debug.Log("j'ai appuyé sur le bouton pour lâcher");
+                TryToDrop(target);
             }
         }
-    }
 
+        if (isWaiting)
+        {
+            frame++;
+        }
+    }
 
     #region COLLIDERS
 
@@ -55,19 +63,58 @@ public class PlayerInteraction : MonoBehaviour
         tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
-            Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
             isSelected = true;
         }
     }
 
-    void Deselect()
+    private void TryToDrop(GameObject gameObject)
     {
-        tapis.StopInteract();
+        Debug.Log("tryToDrop");
+
+        if (tapis != null)
+        {
+            tapis.EnableCollision();
+
+            isWaiting = true;
+           // yield return new WaitUntil(() => frame >= 1); // Need to wait until collisions are updated
+
+            isWaiting = false;
+            frame = 0;
+
+            Debug.Log("in tryToDrop before if : isColliding " + tapis.isColliding);
+            if (!tapis.isColliding)
+            {
+                Deselect();
+            }
+            else
+            {
+                tapis.DisableCollision();
+                FailToDrop();
+            }
+        }
+    }
+
+    public void FailToDrop()
+    {
+        Debug.Log("failToDrop");
+        // Play interdiction sound
+    }
+
+    private void Deselect()
+    {
+        // when several objects to interact with
+        // try if object is not null before StopInteract
+        // and do that for every object
+        // OR switch on content of target
+        if (tapis != null)
+        {
+            tapis.StopInteract();
+        }
+
         target = null;
         AllScriptsToNull();
         isSelected = false;
-        Debug.Log("Deselection !");
     }
 
     private void AllScriptsToNull()

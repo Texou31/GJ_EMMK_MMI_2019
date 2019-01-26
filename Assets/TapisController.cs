@@ -8,8 +8,10 @@ public class TapisController : MonoBehaviour
     private GameObject holder;
 
     private Vector2 rotation = Vector2.zero;
-    
+
     private SpriteRenderer rend;
+
+    public bool isColliding = false; // Is the carpet currently colliding with another object ? Used to trigger TryToDrop() in PlayerInteraction.cs
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +21,9 @@ public class TapisController : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isHeld)
-        {
-            //
-        }
+        isColliding = false;
     }
 
     public void Interact(GameObject newHolder)
@@ -32,7 +31,7 @@ public class TapisController : MonoBehaviour
         if (!isHeld)
         {
             SetNewHolder(newHolder);
-            GetComponent<BoxCollider2D>().enabled = false;
+            DisableCollision();
             rend.enabled = false;
 
             return;
@@ -43,12 +42,44 @@ public class TapisController : MonoBehaviour
     {
         if (holder != null)
         {
-            GetComponent<BoxCollider2D>().enabled = true;
+            // Collision was already enabled by PlayerInteraction.cs TryToDrop()
             rend.enabled = true;
             setPositionOffset();
             UnsetHolder();
         }
     }
+
+    #region COLLIDERS
+
+    public void EnableCollision()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void DisableCollision()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+        {
+            isColliding = true;
+            Debug.Log("isColliding " + isColliding);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+        {
+            isColliding = false;
+            Debug.Log("isColliding " + isColliding);
+        }
+    }
+
+    #endregion
 
     private void SetNewHolder(GameObject newHolder)
     {
