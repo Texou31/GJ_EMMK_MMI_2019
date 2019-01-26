@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     public BoxCollider2D upCol;
     public BoxCollider2D downCol;
 
+    public CircleCollider2D feet;
+
     public string horizontalAxis;
     public string verticalAxis;
 
@@ -120,6 +122,10 @@ public class PlayerMovement : MonoBehaviour {
     private void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Ice") {
             isSliding = true;
+        }
+
+        if (other.gameObject.tag == "Hole"){
+            Debug.Log("UN TROU !");
         }
     }
 
