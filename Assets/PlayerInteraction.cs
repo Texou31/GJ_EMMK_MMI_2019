@@ -12,6 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     // List of interactable objects (their controller scripts)
     private TapisController tapis;
 
+    private bool hasRetrievedToy;
+
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
@@ -58,6 +60,11 @@ public class PlayerInteraction : MonoBehaviour
             //Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
             isSelected = true;
+        }
+
+        if (target.tag == "Toy"){
+            hasRetrievedToy = true;
+            Destroy(target);
         }
     }
 

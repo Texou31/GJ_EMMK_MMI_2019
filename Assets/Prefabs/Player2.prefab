@@ -82,6 +82,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8708551441617368273, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: InteractAxeName
+      value: Interact2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336419598442267138, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4837582023569379042, guid: 5920d59167fae1144882f20f8d1bbd8c,
         type: 3}
       propertyPath: rightCol
@@ -111,11 +121,6 @@ PrefabInstance:
         type: 3}
       propertyPath: verticalAxis
       value: Vertical2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8708551441617368273, guid: 5920d59167fae1144882f20f8d1bbd8c,
-        type: 3}
-      propertyPath: InteractAxeName
-      value: Interact2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
