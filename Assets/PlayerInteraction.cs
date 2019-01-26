@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
-    
+
 
     #region COLLIDERS
 
@@ -47,7 +47,8 @@ public class PlayerInteraction : MonoBehaviour
          * Interact with the target object. Get component to know what to do.
          */
         tapis = target.GetComponent<TapisController>();
-        if (tapis != null) { 
+        if (tapis != null)
+        {
             Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
             isSelected = true;

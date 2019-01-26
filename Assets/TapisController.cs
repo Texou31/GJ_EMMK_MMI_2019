@@ -8,19 +8,22 @@ public class TapisController : MonoBehaviour
     private GameObject holder;
 
     private Vector2 rotation = Vector2.zero;
+    
+    private SpriteRenderer rend;
 
     // Start is called before the first frame update
     void Start()
     {
         isHeld = false;
         holder = null;
+        rend = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (isHeld)
         {
-            setPositionOffset();
+            //
         }
     }
 
@@ -29,6 +32,9 @@ public class TapisController : MonoBehaviour
         if (!isHeld)
         {
             SetNewHolder(newHolder);
+            GetComponent<BoxCollider2D>().enabled = false;
+            rend.enabled = false;
+
             return;
         }
     }
@@ -37,6 +43,9 @@ public class TapisController : MonoBehaviour
     {
         if (holder != null)
         {
+            GetComponent<BoxCollider2D>().enabled = true;
+            rend.enabled = true;
+            setPositionOffset();
             UnsetHolder();
         }
     }
@@ -74,7 +83,7 @@ public class TapisController : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 transform.localPosition = new Vector3(1.5f, 0, 0);
                 break;
-            default: // right/left
+            default: // left
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 transform.localPosition = new Vector3(-1.5f, 0, 0);
                 break;
