@@ -59,27 +59,14 @@ public class PlayerInteraction : MonoBehaviour
         TapisController tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
-<<<<<<< HEAD
-            //Debug.Log("Interact with tapis");
-            tapis.Interact(this.gameObject);
-            isSelected = true;
-=======
             tapis.PickUp(this.gameObject);
             isHoldingObject = true;
             pickedUpTapis = tapis;
->>>>>>> carpet
         }
     }
 
     private void TryToDrop()
     {
-<<<<<<< HEAD
-        tapis.StopInteract();
-        target = null;
-        AllScriptsToNull();
-        isSelected = false;
-        //Debug.Log("Deselection !");
-=======
         if (pickedUpTapis != null)
         {
             if (pickedUpTapis.CanPutDown(this.gameObject.transform.position, GetDirection()))
@@ -92,7 +79,6 @@ public class PlayerInteraction : MonoBehaviour
                 FailToDrop();
             }
         }
->>>>>>> carpet
     }
 
     public void FailToDrop()

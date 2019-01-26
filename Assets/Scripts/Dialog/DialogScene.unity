@@ -197,6 +197,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2287997015389538705, guid: 5ad795a733d8acd48bc4ec986263ef06,
+        type: 3}
+      propertyPath: horizontalAxis
+      value: Horizontal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287997015389538705, guid: 5ad795a733d8acd48bc4ec986263ef06,
+        type: 3}
+      propertyPath: verticalAxis
+      value: Vertical2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad795a733d8acd48bc4ec986263ef06, type: 3}
 --- !u!1001 &480615320
@@ -452,6 +462,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2731413518385009083, guid: 01885415ecaba5d48b7af0128db2de7f,
+        type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1716083067}
+    - target: {fileID: 2731413518385009083, guid: 01885415ecaba5d48b7af0128db2de7f,
+        type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 80914626}
     - target: {fileID: 2731413519600204223, guid: 01885415ecaba5d48b7af0128db2de7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -512,16 +532,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 2731413518385009083, guid: 01885415ecaba5d48b7af0128db2de7f,
-        type: 3}
-      propertyPath: player1
-      value: 
-      objectReference: {fileID: 1716083067}
-    - target: {fileID: 2731413518385009083, guid: 01885415ecaba5d48b7af0128db2de7f,
-        type: 3}
-      propertyPath: player2
-      value: 
-      objectReference: {fileID: 80914626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01885415ecaba5d48b7af0128db2de7f, type: 3}
 --- !u!1001 &4264046870525158218
