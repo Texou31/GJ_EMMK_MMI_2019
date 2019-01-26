@@ -7,14 +7,22 @@ public class PlayerInteraction : MonoBehaviour
     public string InteractAxeName;
 
     private GameObject target;
+    private bool isSelected = false;
+
+    // List of interactable objects (their controller scripts)
+    private TapisController tapis;
 
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
         {
-            if(target != null)
+            if (target != null && !isSelected)
             {
                 InteractWithTarget();
+            }
+            else
+            {
+                Deselect();
             }
         }
     }
@@ -24,20 +32,16 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (target != col.gameObject && target != null)
+        if (target == null)
         {
-            Deselect();
+            target = col.gameObject;
         }
-
-        target = col.gameObject;
     }
 
+    // Prevent trigger after leaving trigger zone
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject == target)
-        {
-            Deselect();
-        }
+        target = null;
     }
 
     #endregion
@@ -48,22 +52,27 @@ public class PlayerInteraction : MonoBehaviour
         /*
          * Interact with the target object. Get component to know what to do.
          */
-        TapisController tapis = target.GetComponent<TapisController>();
-        if (tapis != null) { 
-
+        tapis = target.GetComponent<TapisController>();
+        if (tapis != null)
+        {
             Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
-
-            /*
-             * Soucis actuel : on arrive pas à prendre le tapis car il est reposé de suite...
-             */ 
+            isSelected = true;
         }
     }
 
     void Deselect()
     {
+        tapis.StopInteract();
         target = null;
+        AllScriptsToNull();
+        isSelected = false;
         Debug.Log("Deselection !");
+    }
+
+    private void AllScriptsToNull()
+    {
+        tapis = null;
     }
 
     #endregion
