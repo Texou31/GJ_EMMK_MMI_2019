@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 1616501209, guid: 413a9639e34bf2442868c36e90840c8f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1616501212, guid: 413a9639e34bf2442868c36e90840c8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -255,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1616501210, guid: 413a9639e34bf2442868c36e90840c8f, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413a9639e34bf2442868c36e90840c8f, type: 3}
@@ -406,6 +410,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_Name
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7390307624509064200, guid: 5920d59167fae1144882f20f8d1bbd8c,
         type: 3}
       propertyPath: m_Enabled
@@ -420,16 +434,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
-        type: 3}
-      propertyPath: m_Name
-      value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6473781912942274863, guid: 5920d59167fae1144882f20f8d1bbd8c,
         type: 3}
@@ -495,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820445994151124203, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
