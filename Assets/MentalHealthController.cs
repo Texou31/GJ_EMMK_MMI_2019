@@ -15,20 +15,24 @@ public class MentalHealthController : MonoBehaviour
     public FearBar fearBar;
 
     private PlayersLinkController plc;
+    private PauseManager pauseManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
         plc = GetComponent<PlayersLinkController>();
-
+        pauseManager = GetComponent<PauseManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateFear(!plc.AreLinked());
-        UpdateFearBar();
+        if (!pauseManager.isPaused && !pauseManager.inDialog)
+        {
+            UpdateFear(!plc.AreLinked());
+            UpdateFearBar();
+        }
     }
 
     private void UpdateFear(bool areScared)
