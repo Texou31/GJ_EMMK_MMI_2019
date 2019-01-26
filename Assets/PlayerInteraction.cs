@@ -38,6 +38,12 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Prevent trigger after leaving trigger zone
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        target = null;
+    }
+
     #endregion
 
     #region INTERACTIONS
