@@ -19,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
     public Sprite Left;
 
     private Vector2 movement = Vector2.zero;
+    private Vector2 lastMovement = Vector2.zero;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+
+    private bool isSliding = false;
 
     private void Start()
     {
@@ -31,8 +34,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw(horizontalAxis);
-        movement.y = Input.GetAxisRaw(verticalAxis);
+        if (!isSliding){
+            movement.x = Input.GetAxisRaw(horizontalAxis);
+            movement.y = Input.GetAxisRaw(verticalAxis);
+        }
     }
 
     private void FixedUpdate()
@@ -103,6 +108,19 @@ public class PlayerMovement : MonoBehaviour
         {
             sr.sprite = Left;
             sr.flipX = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Vanilla Ice"){
+            UnityEngine.Debug.Log("Ice Ice Baby!");
+            isSliding = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.tag == "Vanilla Ice"){
+            isSliding = false;
         }
     }
 

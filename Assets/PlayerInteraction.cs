@@ -51,7 +51,7 @@ public class PlayerInteraction : MonoBehaviour
         TapisController tapis = target.GetComponent<TapisController>();
         if (tapis != null) { 
 
-            Debug.Log("Interact with tapis");
+            // Debug.Log("Interact with tapis");
             tapis.Interact(this.gameObject);
 
             /*
@@ -63,7 +63,7 @@ public class PlayerInteraction : MonoBehaviour
     void Deselect()
     {
         target = null;
-        Debug.Log("Deselection !");
+        // Debug.Log("Deselection !");
     }
 
     #endregion
