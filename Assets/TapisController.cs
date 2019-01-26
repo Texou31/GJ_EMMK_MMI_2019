@@ -4,68 +4,109 @@ using UnityEngine;
 
 public class TapisController : MonoBehaviour
 {
-    private bool isHeld;
+    public float length;
+
     private GameObject holder;
 
-    private Vector2 rotation = Vector2.zero;
     
-    private SpriteRenderer rend;
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        isHeld = false;
-        holder = null;
-        rend = GetComponent<SpriteRenderer>();
-    }
-
-    void Update()
-    {
-        if (isHeld)
-        {
-            //
-        }
-    }
-
-    public void Interact(GameObject newHolder)
-    {
-        if (!isHeld)
-        {
-            SetNewHolder(newHolder);
-            GetComponent<BoxCollider2D>().enabled = false;
-            rend.enabled = false;
-
-            return;
-        }
-    }
-
-    public void StopInteract()
-    {
-        if (holder != null)
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-            rend.enabled = true;
-            setPositionOffset();
-            UnsetHolder();
-        }
-    }
-
-    private void SetNewHolder(GameObject newHolder)
-    {
-        isHeld = true;
-        holder = newHolder;
-
-        transform.SetParent(holder.transform);
-    }
-
-    private void UnsetHolder()
-    {
-        isHeld = false;
         holder = null;
 
-        transform.SetParent(null);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
+    public void PickUp(GameObject newHolder)
+    {
+        Debug.Log("Call pickUp");
+        if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
+        {
+            PutToInventory(newHolder);
+        }
+    }
+
+    public bool CanPutDown(Vector2 playerPosition, Vector2 direction) // direction et position
+    {
+        Debug.DrawRay(playerPosition, direction * length);
+        RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, length * 1000, LayerMask.GetMask("Obstacle"));
+        
+        return (hit.collider == null);
+    }
+
+    public void PutDown(Vector2 playerPosition, Vector2 direction)
+    {
+        spriteRenderer.enabled = true;// Le rendre visible
+        EnableCollision();// réactiver ses collisions
+        holder = null;// Update son holder et isheld
+        Snap(playerPosition, direction);
+        CoverHoles();
+    }
+
+    private void PutToInventory(GameObject newHolder)
+    {
+        holder = newHolder; // dit qu'il est tenu et par qui
+        DisableCollision(); // empecher ses collisions
+        spriteRenderer.enabled = false; // le faire disparaitre
+        UncoverHoles();
+    }
+
+    private void Snap(Vector2 position, Vector2 direction)
+    {
+        Debug.Log("Snap TODO !");
+    }
+
+    private void CoverHoles()
+    {
+        Debug.Log("CoverHoles TODO !");
+    }
+
+    private void UncoverHoles()
+    {
+        Debug.Log("UncoverHoles TODO !");
+    }
+    
+
+    #region COLLIDERS
+
+    public void EnableCollision()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void DisableCollision()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    /*
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+        {
+            isColliding = true;
+            Debug.Log("isColliding " + isColliding);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag != "Player")
+        {
+            isColliding = false;
+            Debug.Log("isColliding " + isColliding);
+        }
+    }
+    */
+    #endregion
+  
+    /*
     private void setPositionOffset()
     {
         PlayerMovement holderMovement = holder.GetComponent<PlayerMovement>();
@@ -88,5 +129,5 @@ public class TapisController : MonoBehaviour
                 transform.localPosition = new Vector3(-1.5f, 0, 0);
                 break;
         }
-    }
+    }*/
 }
