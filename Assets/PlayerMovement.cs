@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Hole"){
-            Debug.Log("UN TROU !");
+            Debug.Log("GAME OVER!!!");
         }
     }
 
