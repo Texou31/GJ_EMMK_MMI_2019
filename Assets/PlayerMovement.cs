@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 2f;
 
     public BoxCollider2D rightCol;
@@ -25,44 +24,38 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isSliding = false;
 
-    private void Start()
-    {
-        rb = GetComponentInParent<Rigidbody2D>();
-        sr = GetComponentInParent<SpriteRenderer>();
+    private void Start () {
+        rb = GetComponentInParent<Rigidbody2D> ();
+        sr = GetComponentInParent<SpriteRenderer> ();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (!isSliding){
-            movement.x = Input.GetAxisRaw(horizontalAxis);
-            movement.y = Input.GetAxisRaw(verticalAxis);
+    void Update () {
+        if (!isSliding) {
+            movement.x = Input.GetAxisRaw (horizontalAxis);
+            movement.y = Input.GetAxisRaw (verticalAxis);
         }
     }
 
-    private void FixedUpdate()
-    {
-        Move();
+    private void FixedUpdate () {
+        Move ();
     }
 
     #region PRIVATE FUNCTIONS
-    private void Move()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
-        UpdateColliders();
-        UpdateSprites();
+    private void Move () {
+        rb.MovePosition (rb.position + movement * moveSpeed * Time.deltaTime);
+        UpdateColliders ();
+        UpdateSprites ();
     }
 
-    private void UpdateColliders()
-    {
-        if (movement.y > 0.1f)  // Up enabled
+    private void UpdateColliders () {
+        if (movement.y > 0.1f) // Up enabled
         {
             upCol.enabled = true;
             downCol.enabled = false;
             rightCol.enabled = false;
             leftCol.enabled = false;
-        }
-        else if (movement.y < -0.1f) // Down enabled
+        } else if (movement.y < -0.1f) // Down enabled
         {
             upCol.enabled = false;
             downCol.enabled = true;
@@ -70,14 +63,13 @@ public class PlayerMovement : MonoBehaviour
             leftCol.enabled = false;
         }
 
-        if (movement.x > 0.1f)  // Right enabled
+        if (movement.x > 0.1f) // Right enabled
         {
             upCol.enabled = false;
             downCol.enabled = false;
             rightCol.enabled = true;
             leftCol.enabled = false;
-        }
-        else if (movement.x < -0.1f)    // Left enabled
+        } else if (movement.x < -0.1f) // Left enabled
         {
             upCol.enabled = false;
             downCol.enabled = false;
@@ -86,40 +78,36 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void UpdateSprites()
-    {
-        if (movement.y > 0.1f)  // Up enabled
+    private void UpdateSprites () {
+        if (movement.y > 0.1f) // Up enabled
         {
             sr.sprite = Back;
             sr.flipX = false;
-        }
-        else if (movement.y < -0.1f) // Down enabled
+        } else if (movement.y < -0.1f) // Down enabled
         {
             sr.sprite = Face;
             sr.flipX = false;
         }
 
-        if (movement.x > 0.1f)  // Right enabled
+        if (movement.x > 0.1f) // Right enabled
         {
             sr.sprite = Left;
             sr.flipX = true;
-        }
-        else if (movement.x < -0.1f)    // Left enabled
+        } else if (movement.x < -0.1f) // Left enabled
         {
             sr.sprite = Left;
             sr.flipX = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Vanilla Ice"){
-            UnityEngine.Debug.Log("Ice Ice Baby!");
+    private void OnTriggerEnter2D (Collider2D other) {
+        if (other.gameObject.tag == "Ice") {
             isSliding = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.tag == "Vanilla Ice"){
+    private void OnTriggerExit2D (Collider2D other) {
+        if (other.gameObject.tag == "Ice") {
             isSliding = false;
         }
     }

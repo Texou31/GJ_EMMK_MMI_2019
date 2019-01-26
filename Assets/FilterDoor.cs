@@ -35,8 +35,6 @@ public class FilterDoor : MonoBehaviour {
 
     private void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == targetTag) {
-            UnityEngine.Debug.Log ("WOOOAG LIVING ");
-
             door.enabled = false;
             spriteRenderer.enabled = false;
         }
@@ -44,7 +42,6 @@ public class FilterDoor : MonoBehaviour {
 
     private void OnTriggerExit2D (Collider2D other) {
         if (other.gameObject.tag == targetTag) {
-            UnityEngine.Debug.Log ("ON A PRAYER!");
             door.enabled = true;
             spriteRenderer.enabled = true;
         }
