@@ -18,6 +18,8 @@ public class DialogManager : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
 
+    public PauseManager pauseManager;
+
     private List<DialogPage> m_dialogToDisplay;
     private GameObject lastEmitter;
 
@@ -69,18 +71,14 @@ public class DialogManager : MonoBehaviour {
 
     private void EnableControllers()
     {
-        player1.GetComponent<PlayerMovement>().enabled = true;
-        player1.GetComponent<PlayerInteraction>().enabled = true;
-        player2.GetComponent<PlayerMovement>().enabled = true;
-        player2.GetComponent<PlayerInteraction>().enabled = true;
+        pauseManager.inDialog = false;
+        pauseManager.UnpauseGameplay();
     }
 
     private void DisableControllers()
     {
-        player1.GetComponent<PlayerMovement>().enabled = false;
-        player1.GetComponent<PlayerInteraction>().enabled = false;
-        player2.GetComponent<PlayerMovement>().enabled = false;
-        player2.GetComponent<PlayerInteraction>().enabled = false;
+        pauseManager.inDialog = true;
+        pauseManager.PauseGameplay();
     }
 
     private void EndDialog()
