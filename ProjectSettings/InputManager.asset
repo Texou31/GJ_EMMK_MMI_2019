@@ -151,7 +151,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Interact2
-    descriptiveName: Interact for player 1
+    descriptiveName: Interact for player 2
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
@@ -170,7 +170,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: enter
+    positiveButton: return
     altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 3
