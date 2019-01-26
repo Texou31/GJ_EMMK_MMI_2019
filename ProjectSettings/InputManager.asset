@@ -138,7 +138,7 @@ InputManager:
     descriptiveName: Interact for player 1
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: space
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: joystick 1 button 0
     gravity: 3
@@ -154,7 +154,7 @@ InputManager:
     descriptiveName: Interact for player 1
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: right shift
+    positiveButton: space
     altNegativeButton: 
     altPositiveButton: joystick 2 button 0
     gravity: 3
