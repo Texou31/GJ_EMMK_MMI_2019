@@ -142,8 +142,22 @@ PrefabInstance:
       propertyPath: InteractAxeName
       value: Interact2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 133692206563166735, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
+    - target: {fileID: 7336419598442267138, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728175235006913388, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: horizontalAxis
+      value: Horizontal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728175235006913388, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: verticalAxis
+      value: Vertical2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
 --- !u!1 &2560549817714351100 stripped
 GameObject:
