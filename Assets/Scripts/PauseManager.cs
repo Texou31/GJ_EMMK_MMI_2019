@@ -42,21 +42,21 @@ public class PauseManager : MonoBehaviour
     public void ClickOnMenu()
     {
         Debug.Log("Menu !");
-        SoundController.instance.PlayFX(FX.Click);
+        //SoundController.instance.PlayFX(FX.Click);
         SceneController.instance.GoToMenu();
     }
 
     public void ClickOnRestart()
     {
         Debug.Log("Restart !");
-        SoundController.instance.PlayFX(FX.Click);
+        //SoundController.instance.PlayFX(FX.Click);
         SceneController.instance.Reload();
     }
 
     public void ClickOnResume()
     {
         Debug.Log("Unpause !");
-        SoundController.instance.PlayFX(FX.Click);
+        //SoundController.instance.PlayFX(FX.Click);
         Unpause();
     }
 

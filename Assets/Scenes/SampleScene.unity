@@ -2131,6 +2131,16 @@ PrefabInstance:
       propertyPath: endGameManager
       value: 
       objectReference: {fileID: 1523062358}
+    - target: {fileID: 2278173307396760893, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: m_object2ToFollow
+      value: 
+      objectReference: {fileID: 1741487289}
+    - target: {fileID: 483320591499675348, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871c2e7b30a558443a475fedb35ffc8a, type: 3}
 --- !u!114 &1523062358 stripped
@@ -2314,6 +2324,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 974778058852738281, guid: 2797a4fd86749c74ab087bba19967d1e,
     type: 3}
   m_PrefabInstance: {fileID: 1603857523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741487289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 483320591499675348, guid: 871c2e7b30a558443a475fedb35ffc8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1523062357}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744179351
 GameObject:

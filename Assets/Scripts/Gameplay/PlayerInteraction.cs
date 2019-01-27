@@ -75,7 +75,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("Interact with target" + target.name);
 
-        if (target.tag.Equals(currentInteractableObject)) {
+        if (target.tag.Equals(currentInteractableObject))
+        {
 
             /*
              * Interact with the target object. Get component to know what to do.
@@ -141,7 +142,7 @@ public class PlayerInteraction : MonoBehaviour
     public void FailToDrop()
     {
         Debug.Log("failToDrop");
-        SoundController.instance.PlayFX(FX.CantDrop);
+        //SoundController.instance.PlayFX(FX.CantDrop);
         // Play interdiction sound
     }
 
