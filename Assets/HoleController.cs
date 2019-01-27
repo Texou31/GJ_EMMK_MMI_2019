@@ -11,7 +11,6 @@ public class HoleController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        print(other.gameObject.tag);
         if(other.gameObject.tag.Equals("Carpet")){
             Debug.Log("I am no longer a hole. I can be anything and I want to be Untagged!");
             tag = "Untagged";

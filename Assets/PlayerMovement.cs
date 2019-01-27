@@ -134,11 +134,21 @@ public class PlayerMovement : MonoBehaviour {
         if (other.gameObject.tag == "Hole"){
             Debug.Log("GAME OVER!!!");
         }
+
+        if (other.gameObject.tag == "Carpet"){
+            Debug.Log("Mouahahah tu n'auras pas ce tapis.");
+            other.gameObject.tag = "BlockedCarpet";
+        }
     }
 
       private void OnTriggerExit2D (Collider2D other) {
           if (other.gameObject.tag == "Ice") {
               isSliding = false;
+          }
+
+          if (other.gameObject.tag == "BlockedCarpet"){
+              Debug.Log("Bon d'accord, je te libère le tapis.");
+              other.gameObject.tag = "Carpet";
           }
         }
 
