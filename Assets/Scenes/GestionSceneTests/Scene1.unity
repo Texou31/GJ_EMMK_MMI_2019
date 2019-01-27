@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ce40368f7918b74fae52f5adcaa1e2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1 &111132896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8647916991840669171, guid: 871c2e7b30a558443a475fedb35ffc8a,
@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6ce9be880059de44807361680eb40a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   InteractAxeName: Interact2
   endGameManager: {fileID: 202412828}
   isHoldingObject: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 989500b2d5bed35458fef952c7683614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1001 &1161698692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,8 +311,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6ce9be880059de44807361680eb40a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   InteractAxeName: Interact1
   endGameManager: {fileID: 202412828}
   isHoldingObject: 0
@@ -386,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 3362324688499213979, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: dialogManager
-      value: 
+      value:
       objectReference: {fileID: 92778327}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d63e3e1102d69944ea232b02ea1e19c3, type: 3}
