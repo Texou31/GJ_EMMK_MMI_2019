@@ -23363,7 +23363,7 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[0].text
-      value: "<Alphonse> : Regarde l\xE0-bas !"
+      value: "<Alphonse> : Regarde, l\xE0-bas !"
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
@@ -23378,7 +23378,7 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[3].text
-      value: '<Alphonse> : Mais reste attentive, il y a encore plus de "trous" ici.'
+      value: '<Alphonse> : Mais fais attention, il y a encore plus de "trous" ici.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d63e3e1102d69944ea232b02ea1e19c3, type: 3}

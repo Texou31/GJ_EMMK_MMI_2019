@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18758,11 +18758,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -4.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6596494521575179357, guid: 871c2e7b30a558443a475fedb35ffc8a,
-        type: 3}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -18772,6 +18767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596494521575179357, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871c2e7b30a558443a475fedb35ffc8a, type: 3}
@@ -23779,7 +23779,7 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
@@ -23799,7 +23799,17 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[3].text
-      value: '<Emilie> : Ouf ! Je pouvais pas dormir sans Monsieur Nounours !'
+      value: "<Emilie> : *renifle* \xC7a fait des jours que je le cherchais..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[4].text
+      value: '<Emilie> : Je peux pas dormir sans lui... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[5].text
+      value: '<Emilie> : Monsieur Nounours, attends-moi, j''arrive !'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d63e3e1102d69944ea232b02ea1e19c3, type: 3}
