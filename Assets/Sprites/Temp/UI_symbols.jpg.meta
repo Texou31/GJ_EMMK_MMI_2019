@@ -5,6 +5,7 @@ TextureImporter:
     21300000: UI_Reload
     21300002: UI_Play
     21300004: UI_Menu
+    21300006: UI_Next
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -175,6 +176,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6c0a7b47d025c924ca224359e4c29354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Next
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 57
+        width: 257
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30ab507d7a8bbf4db974856cc78b2e1
       vertices: []
       indices: 
       edges: []
