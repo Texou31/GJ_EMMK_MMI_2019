@@ -141,15 +141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baadfeeea16e72142b6d2173ee3ef60f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
-  takeSound: {fileID: 0}
-  dropSound: {fileID: 0}
-  cantDropSound: {fileID: 0}
-  toySound: {fileID: 0}
-  gameOverSound: {fileID: 0}
-  victorySound: {fileID: 0}
-  beginLevelSound: {fileID: 0}
-  clickSound: {fileID: 0}
+  music: {fileID: 8300000, guid: cb3251d3859528044969aa8360d8f5f3, type: 3}
+  takeSound: {fileID: 8300000, guid: 68fc0ec0327a08f459a063e5df7ea753, type: 3}
+  dropSound: {fileID: 8300000, guid: 19ceb7394a12e064692089c8fd021d38, type: 3}
+  cantDropSound: {fileID: 8300000, guid: f301286232db5eb4cb45e0dc0cb70782, type: 3}
+  toySound: {fileID: 8300000, guid: c39d9c78eb96035478c3d183cdf3846d, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 548d54e0921b59d42b43c25a2b72e15a, type: 3}
+  victorySound: {fileID: 8300000, guid: 2c20d0e9390230d49b9a758b718a95c7, type: 3}
+  beginLevelSound: {fileID: 8300000, guid: 72a8ed8a7265623438aaf3dc932b7338, type: 3}
+  clickSound: {fileID: 8300000, guid: d7024b5b08e158b4a874f5d1baa6d460, type: 3}
 --- !u!1 &2171378487937891078
 GameObject:
   m_ObjectHideFlags: 0

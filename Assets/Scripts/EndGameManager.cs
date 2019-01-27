@@ -34,23 +34,27 @@ public class EndGameManager : MonoBehaviour
     public void OnClickMenu()
     {
         Debug.Log("Menu !");
+        SoundController.instance.PlayFX(FX.Click);
         SceneController.instance.GoToMenu();
     }
 
     public void OnClickNext()
     {
         Debug.Log("Next scene !");
+        SoundController.instance.PlayFX(FX.Click);
         SceneController.instance.GoToNextLevel();
     }
 
     public void OnClickReload()
     {
         Debug.Log("Restart !");
+        SoundController.instance.PlayFX(FX.Click);
         SceneController.instance.Reload();
     }
 
     public void Victory()
     {
+        SoundController.instance.PlayFX(FX.Victory);
         pauseManager.canBePaused = false;
         victoryTab.SetActive(true);
         pauseManager.PauseGameplay();
@@ -58,6 +62,7 @@ public class EndGameManager : MonoBehaviour
 
     public void GameOver()
     {
+        SoundController.instance.PlayFX(FX.GameOver);
         pauseManager.canBePaused = false;
         gameOverTab.SetActive(true);
         pauseManager.PauseGameplay();

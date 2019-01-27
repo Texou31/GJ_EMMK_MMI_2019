@@ -27,6 +27,7 @@ public class TapisController : MonoBehaviour
 
     public void PickUp(GameObject newHolder)
     {
+        
         Debug.Log("Aaah " + newHolder.name + " veut me prendre !");
         if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
         {
@@ -46,6 +47,7 @@ public class TapisController : MonoBehaviour
     public void PutDown(Vector2 playerPosition, Vector2 direction)
     {
         Debug.Log("Moi, le tapis, je vais être posé !");
+        SoundController.instance.PlayFX(FX.Drop);
         tag = "Carpet";
         spriteRenderer.enabled = true;// Le rendre visible
         EnableCollision();// réactiver ses collisions
@@ -55,6 +57,7 @@ public class TapisController : MonoBehaviour
 
     private void PutToInventory(GameObject newHolder)
     {
+        SoundController.instance.PlayFX(FX.Take);
         holder = newHolder; // dit qu'il est tenu et par qui
         DisableCollision(); // empecher ses collisions
         spriteRenderer.enabled = false; // le faire disparaitre

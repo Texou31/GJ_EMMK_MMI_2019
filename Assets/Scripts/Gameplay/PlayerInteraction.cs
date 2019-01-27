@@ -108,6 +108,7 @@ public class PlayerInteraction : MonoBehaviour
     public void FailToDrop()
     {
         Debug.Log("failToDrop");
+        SoundController.instance.PlayFX(FX.CantDrop);
         // Play interdiction sound
     }
 
