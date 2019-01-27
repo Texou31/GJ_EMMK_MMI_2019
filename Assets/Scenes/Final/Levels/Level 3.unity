@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18751,30 +18751,42 @@ PrefabInstance:
     - target: {fileID: 170022468630754579, guid: 871c2e7b30a558443a475fedb35ffc8a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 170022468630754579, guid: 871c2e7b30a558443a475fedb35ffc8a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6596494521575179357, guid: 871c2e7b30a558443a475fedb35ffc8a,
         type: 3}
       propertyPath: orthographic size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871c2e7b30a558443a475fedb35ffc8a, type: 3}
+--- !u!114 &1332053681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6596494521456825205, guid: 871c2e7b30a558443a475fedb35ffc8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1332053680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce40368f7918b74fae52f5adcaa1e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1332742725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23687,6 +23699,110 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1748265685}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1753271979
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3803269913939382032, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350418383859195152, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362324688499213979, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: dialogManager
+      value: 
+      objectReference: {fileID: 1332053681}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[0].text
+      value: '<Emilie> : ALPH ! C''est Monsieur Nounours !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[1].text
+      value: '<Alphonse> : Oui, oui, je vois, mais parle moins fort !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[2].text
+      value: "<Alphonse> : Allons le chercher et rentrons vite \xE0 la maison."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[3].text
+      value: '<Emilie> : Ouf ! Je pouvais pas dormir sans Monsieur Nounours !'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d63e3e1102d69944ea232b02ea1e19c3, type: 3}
 --- !u!1001 &1753329934
 PrefabInstance:
   m_ObjectHideFlags: 0
