@@ -13,6 +13,7 @@ public class MentalHealthController : MonoBehaviour
     public bool invert;
 
     public FearBar fearBar;
+    public EndGameManager endGameManager;
 
     private PlayersLinkController plc;
     private PauseManager pauseManager;
@@ -28,7 +29,7 @@ public class MentalHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pauseManager.isPaused && !pauseManager.inDialog)
+        if (!pauseManager.isPaused && !pauseManager.inDialog && !pauseManager.isGameplayPaused)
         {
             UpdateFear(!plc.AreLinked());
             UpdateFearBar();
@@ -42,7 +43,7 @@ public class MentalHealthController : MonoBehaviour
             fearPoints += decreaseSpeed * Time.deltaTime;
             if(fearPoints >= maximumFearPoints)
             {
-                Debug.Log("GAME OVER !");
+                endGameManager.GameOver();
                 fearPoints = maximumFearPoints;
             }
         } else
