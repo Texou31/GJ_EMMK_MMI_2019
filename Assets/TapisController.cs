@@ -23,8 +23,6 @@ public class TapisController : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
-
-        tag = "Carpet";
     }
 
     public void PickUp(GameObject newHolder)
