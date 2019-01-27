@@ -23,12 +23,15 @@ public class TapisController : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        tag = "Carpet";
     }
 
     public void PickUp(GameObject newHolder)
     {
         if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
         {
+            tag = "Untagged";
             PutToInventory(newHolder);
         }
     }
@@ -43,11 +46,12 @@ public class TapisController : MonoBehaviour
 
     public void PutDown(Vector2 playerPosition, Vector2 direction)
     {
+        Debug.Log("Moi, le tapis, je vais être posé !");
+        tag = "Carpet";
         spriteRenderer.enabled = true;// Le rendre visible
         EnableCollision();// réactiver ses collisions
         holder = null;// Update son holder et isheld
         Snap(playerPosition, direction);
-        // CoverHoles();
     }
 
     private void PutToInventory(GameObject newHolder)
@@ -55,7 +59,6 @@ public class TapisController : MonoBehaviour
         holder = newHolder; // dit qu'il est tenu et par qui
         DisableCollision(); // empecher ses collisions
         spriteRenderer.enabled = false; // le faire disparaitre
-        // UncoverHoles();
     }
 
     private void Snap(Vector2 position, Vector2 direction)
@@ -84,17 +87,6 @@ public class TapisController : MonoBehaviour
         }
 
     }
-
-    private void CoverHoles()
-    {
-        Debug.Log("CoverHoles TODO !");
-    }
-
-    private void UncoverHoles()
-    {
-        Debug.Log("UncoverHoles TODO !");
-    }
-    
 
     #region COLLIDERS
 
