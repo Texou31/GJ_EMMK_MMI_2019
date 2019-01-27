@@ -8,18 +8,21 @@ public class PlayerInteraction : MonoBehaviour
     public string InteractAxeName;
 
     public bool isHoldingObject = false;
-
     private GameObject target = null;
+
+    private TapisController pickedUpTapis;
+
+    private bool hasRetrievedToy; // Use to check on exit if victory
 
     // List of interactable objects (their controller scripts)
     private List<string> interactableObjectsTags;
     private string currentInteractableObject;
-    private TapisController pickedUpTapis;
 
     public PlayerInteraction(){
         interactableObjectsTags = new List<string>();
         interactableObjectsTags.Add("Carpet");
         interactableObjectsTags.Add("Exit");
+        interactableObjectsTags.Add("Toy");
 
         pickedUpTapis = null;
     }
@@ -65,6 +68,8 @@ public class PlayerInteraction : MonoBehaviour
     #region INTERACTIONS
     private void InteractWithTarget()
     {
+        Debug.Log("Interact with target" + target.name);
+
         /*
          * Interact with the target object. Get component to know what to do.
          */
@@ -72,7 +77,12 @@ public class PlayerInteraction : MonoBehaviour
             /*
             * Interacting with the exit, leaving the level
             */
-            SceneManager.LoadScene(SceneController.instance.nextSceneName);
+            if (hasRetrievedToy)
+            {
+                Debug.Log("Par ici la sortie !");
+                //EndGameManager.Victory(); // Replace SceneManager
+                SceneManager.LoadScene(SceneController.instance.nextSceneName);
+            }
         }
         
          if(currentInteractableObject.Equals("Carpet")){
@@ -82,11 +92,17 @@ public class PlayerInteraction : MonoBehaviour
             isHoldingObject = true;
             pickedUpTapis = tapis;
         }
+
+        if (currentInteractableObject.Equals("Toy"))
+        {
+            Debug.Log("On récupère le jouet");
+            hasRetrievedToy = true;
+            Destroy(target);
+        }
     }
 
     private void TryToDrop()
     {
-        Debug.Log("On va essayer de poser un tapis.");
         if (pickedUpTapis != null)
         {
             Debug.Log("J'ai bien un tapis à poser !");
