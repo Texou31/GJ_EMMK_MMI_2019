@@ -24,13 +24,13 @@ public class SceneController : MonoBehaviour
     public void GoToMenu()
     {
         Debug.Log("Valeur définie pour le menu : " + menuSceneName);
-        SceneManager.LoadScene(SceneManager.GetSceneByName(menuSceneName).buildIndex);
+        SceneManager.LoadScene(menuSceneName);
     }
 
     public void GoToNextLevel()
     {
         Debug.Log("Next level call !");
-        SceneManager.LoadScene(SceneManager.GetSceneByName(nextSceneName).buildIndex);
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void Reload()

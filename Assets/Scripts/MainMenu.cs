@@ -5,31 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string firstLevelName;
+    public string creditSceneName;
 
-    public bool isStart;
-    public bool isQuit;
-
-    // Start is called before the first frame update
-    void Start()
+    public void GoToFirstLevel()
     {
-        
+        SceneManager.LoadScene(firstLevelName);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoToCredit()
     {
-        
+        SceneManager.LoadScene(creditSceneName);
     }
 
-    void OnMouseUp()
+    public void GoToExit()
     {
-        if (isStart)
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
-        if (isQuit)
-        {
-            Application.Quit();
-        }
+        Debug.Log("Exit");
+        Application.Quit();
     }
 }
