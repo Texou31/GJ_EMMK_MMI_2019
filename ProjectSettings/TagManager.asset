@@ -8,6 +8,11 @@ TagManager:
   - Player 2
   - Ice
   - Toy
+  - Hole
+  - Exit
+  - Wall
+  - Carpet
+  - BlockedCarpet
   layers:
   - Default
   - TransparentFX
