@@ -11,9 +11,16 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject target = null;
 
     // List of interactable objects (their controller scripts)
-    private TapisController pickedUpTapis = null;
-    
+    private List<string> interactableObjectsTags;
+    private TapisController pickedUpTapis;
 
+    public PlayerInteraction(){
+        interactableObjectsTags = new List<string>();
+        interactableObjectsTags.Add("Carpet");
+
+        pickedUpTapis = null;
+    }
+    
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
@@ -33,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (target == null) // Cause possible de bug // TODO le check
+        if (target == null && interactableObjectsTags.Contains(col.gameObject.tag)) // Cause possible de bug // TODO le check
         {
             target = col.gameObject;
         }
@@ -78,6 +85,7 @@ public class PlayerInteraction : MonoBehaviour
                 pickedUpTapis.PutDown(this.gameObject.transform.position, GetDirection());
                 isHoldingObject = false;
                 pickedUpTapis = null;
+                target = null;
                 Debug.Log("Posons le tapis.");
             } else
             {

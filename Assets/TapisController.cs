@@ -29,6 +29,7 @@ public class TapisController : MonoBehaviour
 
     public void PickUp(GameObject newHolder)
     {
+        Debug.Log("Aaah " + newHolder.name + " veut me prendre !");
         if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
         {
             tag = "Untagged";
