@@ -1482,6 +1482,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 2560549817714351100, guid: 5ad795a733d8acd48bc4ec986263ef06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 543313926278200274, guid: 5ad795a733d8acd48bc4ec986263ef06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1567,8 +1572,14 @@ PrefabInstance:
       propertyPath: verticalAxis
       value: Vertical2
       objectReference: {fileID: 0}
+    - target: {fileID: 4291211071069212927, guid: 5ad795a733d8acd48bc4ec986263ef06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5187281392549298904, guid: 5ad795a733d8acd48bc4ec986263ef06, type: 3}
+    - {fileID: 9021764687760856069, guid: 5ad795a733d8acd48bc4ec986263ef06, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ad795a733d8acd48bc4ec986263ef06, type: 3}
 --- !u!4 &6629661432250232285 stripped
 Transform:
@@ -1617,6 +1628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6473781912942274863, guid: 5920d59167fae1144882f20f8d1bbd8c,
         type: 3}
@@ -1673,6 +1689,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7336419598442267138, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728175235006913388, guid: 5920d59167fae1144882f20f8d1bbd8c,
         type: 3}
       propertyPath: rightCol
@@ -1693,7 +1714,8 @@ PrefabInstance:
       propertyPath: downCol
       value: 
       objectReference: {fileID: 4752593441209291781}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2553255483556644600, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
 --- !u!1 &2764877937454454077 stripped
 GameObject:

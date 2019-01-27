@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public string InteractAxeName;
-   
+
     public EndGameManager endGameManager;
 
     public bool isHoldingObject = false;
@@ -20,7 +20,8 @@ public class PlayerInteraction : MonoBehaviour
     private List<string> interactableObjectsTags;
     private string currentInteractableObject;
 
-    public PlayerInteraction(){
+    public PlayerInteraction()
+    {
         interactableObjectsTags = new List<string>();
         interactableObjectsTags.Add("Carpet");
         interactableObjectsTags.Add("Exit");
@@ -28,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
 
         pickedUpTapis = null;
     }
-    
+
     private void Update()
     {
         if (Input.GetButtonDown(InteractAxeName))
@@ -49,18 +50,20 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (target == null && interactableObjectsTags.Contains(col.gameObject.tag)) // Cause possible de bug // TODO le check
-            {
-                target = col.gameObject;
-                currentInteractableObject = col.gameObject.tag;
-            }
-        
+        {
+            Debug.Log("OnTriggerEnter col = " + col.name);
+            target = col.gameObject;
+            currentInteractableObject = col.gameObject.tag;
+        }
+
     }
 
     // Prevent trigger after leaving trigger zone
     private void OnTriggerExit2D(Collider2D col)
     {
-        if(target == col.gameObject)
+        if (target == col.gameObject)
         {
+            Debug.Log("OnTriggerExit col = " + col.name);
             target = null;
         }
     }
@@ -72,34 +75,45 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("Interact with target" + target.name);
 
-        /*
-         * Interact with the target object. Get component to know what to do.
-         */
-        if(currentInteractableObject.Equals("Exit")){
+        if (target.tag.Equals(currentInteractableObject)) {
+
             /*
-            * Interacting with the exit, leaving the level
-            */
-            if (hasRetrievedToy)
+             * Interact with the target object. Get component to know what to do.
+             */
+            if (currentInteractableObject.Equals("Exit"))
             {
-                Debug.Log("Par ici la sortie !");
-                endGameManager.Victory(); // Replace SceneManager
-                //SceneManager.LoadScene(SceneController.instance.nextSceneName);
+                /*
+                * Interacting with the exit, leaving the level
+                */
+                if (hasRetrievedToy)
+                {
+                    Debug.Log("Par ici la sortie !");
+                    endGameManager.Victory(); // Replace SceneManager
+                                              //SceneManager.LoadScene(SceneController.instance.nextSceneName);
+                }
+            }
+
+            if (currentInteractableObject.Equals("Carpet"))
+            {
+                TapisController tapis = target.GetComponent<TapisController>();
+                Debug.Log("Je prends un tapis !");
+                tapis.PickUp(this.gameObject);
+                isHoldingObject = true;
+                pickedUpTapis = tapis;
+            }
+
+            if (currentInteractableObject.Equals("Toy"))
+            {
+                Debug.Log("On récupère le jouet");
+                hasRetrievedToy = true;
+                Destroy(target);
             }
         }
-        
-         if(currentInteractableObject.Equals("Carpet")){
-            TapisController tapis = target.GetComponent<TapisController>();
-            Debug.Log("Je prends un tapis !");
-            tapis.PickUp(this.gameObject);
-            isHoldingObject = true;
-            pickedUpTapis = tapis;
-        }
-
-        if (currentInteractableObject.Equals("Toy"))
+        else
         {
-            Debug.Log("On récupère le jouet");
-            hasRetrievedToy = true;
-            Destroy(target);
+            Debug.Log("Mais tu te souviens de trucs louches ma parole. Oublie donc tout ça.");
+            target = null;
+            currentInteractableObject = "";
         }
     }
 
@@ -116,7 +130,8 @@ public class PlayerInteraction : MonoBehaviour
                 pickedUpTapis = null;
                 target = null;
                 Debug.Log("Posons le tapis.");
-            } else
+            }
+            else
             {
                 FailToDrop();
             }
@@ -131,8 +146,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private Vector2 GetDirection()
     {
-        Debug.Log("GetDirection direction = " + GetComponentInChildren<PlayerMovement>().GetDirection());
-
         switch (GetComponentInChildren<PlayerMovement>().GetDirection())
         {
             case "up":

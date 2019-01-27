@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour {
 
     public string GetDirection()
     {
-        Debug.Log("PlayerMovement GetDirection = " + direction);
         return direction;
     }
 
@@ -92,7 +91,6 @@ public class PlayerMovement : MonoBehaviour {
             rightCol.enabled = false;
             leftCol.enabled = true;
         }
-        //Debug.Log("updateCollider direction = " + direction);
     }
 
     private void UpdateSprites()
@@ -136,7 +134,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Carpet"){
-            Debug.Log("Mouahahah tu n'auras pas ce tapis.");
             other.gameObject.tag = "BlockedCarpet";
         }
     }
@@ -147,7 +144,6 @@ public class PlayerMovement : MonoBehaviour {
           }
 
           if (other.gameObject.tag == "BlockedCarpet"){
-              Debug.Log("Bon d'accord, je te libère le tapis.");
               other.gameObject.tag = "Carpet";
           }
         }

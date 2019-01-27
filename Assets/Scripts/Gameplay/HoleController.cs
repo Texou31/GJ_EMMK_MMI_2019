@@ -11,14 +11,14 @@ public class HoleController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag.Equals("Carpet")){
+        if(other.gameObject.tag.Contains("Carpet")){
             Debug.Log("I am no longer a hole. I can be anything and I want to be Untagged!");
             tag = "Untagged";
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject.tag.Equals("Carpet")){
+        if(other.gameObject.tag.Contains("Carpet")){
             Debug.Log("You thought I was untagged but it's me, A HOLE!");
             tag = "Hole";
         }
