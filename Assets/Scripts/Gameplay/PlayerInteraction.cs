@@ -72,9 +72,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("Interact with target" + target.name);
 
-        /*
-         * Interact with the target object. Get component to know what to do.
-         */
         if(currentInteractableObject.Equals("Exit")){
             /*
             * Interacting with the exit, leaving the level

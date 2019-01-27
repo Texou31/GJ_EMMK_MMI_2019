@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Hole"){
-            Debug.Log("is null : " + (endGameManager == null).ToString());
+            Debug.Log("GameOver");
             endGameManager.GameOver();
         }
 

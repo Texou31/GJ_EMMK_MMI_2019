@@ -43,6 +43,7 @@ public class MentalHealthController : MonoBehaviour
             fearPoints += decreaseSpeed * Time.deltaTime;
             if(fearPoints >= maximumFearPoints)
             {
+                Debug.Log("GameOver !");
                 endGameManager.GameOver();
                 fearPoints = maximumFearPoints;
             }
