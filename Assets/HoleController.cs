@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HoleController : MonoBehaviour
 {
-    private bool isCovered;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +13,12 @@ public class HoleController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag.Equals("Carpet")){
-            this.isCovered = true;
-            tag = "Floor";
+            tag = "Untagged";
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.tag.Equals("Carpet")){
-            this.isCovered = false;
             tag = "Hole";
         }
     }
