@@ -30,7 +30,7 @@ public class SceneController : MonoBehaviour
     public void GoToNextLevel()
     {
         Debug.Log("Next level call !");
-        SceneManager.LoadScene(SceneManager.GetSceneByName(nextSceneName).buildIndex);
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void Reload()
