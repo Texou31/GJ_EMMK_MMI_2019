@@ -8,6 +8,9 @@ TextureImporter:
     21300006: "tapis color\xE9 et jouets_3"
     21300008: "tapis color\xE9 et jouets_4"
     21300010: "tapis color\xE9 et jouets_5"
+    21300012: "tapis color\xE9 et jouets_6"
+    21300014: "tapis color\xE9 et jouets_7"
+    21300016: "tapis color\xE9 et jouets_8"
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -26,7 +29,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
@@ -38,7 +41,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -93,6 +96,66 @@ TextureImporter:
       name: "tapis color\xE9 et jouets_0"
       rect:
         serializedVersion: 2
+        x: 6
+        y: 117
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdad5d03c7037ff4b8c195a4e26a7e74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "tapis color\xE9 et jouets_1"
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 107
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4ae500b8d185e47846ce5443542a6f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "tapis color\xE9 et jouets_2"
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 125
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a02135041288644f9e621d88aca2f99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "tapis color\xE9 et jouets_3"
+      rect:
+        serializedVersion: 2
         x: 23
         y: 51
         width: 16
@@ -104,13 +167,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14bffb5260e73514e9fe8ba4861a71c7
+      spriteID: aedb3ed6835a36047a9a06411c5d44d9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "tapis color\xE9 et jouets_1"
+      name: "tapis color\xE9 et jouets_4"
       rect:
         serializedVersion: 2
         x: 70
@@ -124,13 +187,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58f357f43037703458307c17931993f6
+      spriteID: aa85d4beec8cadd43b5954488f5da1ea
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "tapis color\xE9 et jouets_2"
+      name: "tapis color\xE9 et jouets_5"
       rect:
         serializedVersion: 2
         x: 93
@@ -144,13 +207,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa8880f85d0f03b41ba386e3673a35e4
+      spriteID: 8b384bb7e41369049bcd79eea49c9aa4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "tapis color\xE9 et jouets_3"
+      name: "tapis color\xE9 et jouets_6"
       rect:
         serializedVersion: 2
         x: 9
@@ -164,13 +227,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccc42cda700a5cd4d8228a7b673756d1
+      spriteID: 248d1581194350d43ab4b145b1c260c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "tapis color\xE9 et jouets_4"
+      name: "tapis color\xE9 et jouets_7"
       rect:
         serializedVersion: 2
         x: 69
@@ -184,13 +247,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b691daf0a5278594281b3695f2f5c7e5
+      spriteID: 6cee804d09a213146977a86e182aa06e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "tapis color\xE9 et jouets_5"
+      name: "tapis color\xE9 et jouets_8"
       rect:
         serializedVersion: 2
         x: 15
@@ -204,7 +267,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 259a210257284204e8d837f054671de3
+      spriteID: f5674f94e756f42488f8eaf6c262ffd4
       vertices: []
       indices: 
       edges: []
@@ -212,7 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 68839e458d127dd4c94680c9019ad227
+    spriteID: cf9d6ae7de7f61946bb3230ea8e8ce90
     vertices: []
     indices: 
     edges: []
