@@ -12,17 +12,20 @@ public class PauseManager : MonoBehaviour
     public bool isPaused;
     public bool inDialog;
 
+    public bool canBePaused = true;
+
     // Start is called before the first frame update
     void Start()
     {
         isPaused = false;
         inDialog = false;
+        canBePaused = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && canBePaused)
         {
             if (isPaused)
             {
@@ -71,19 +74,18 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGameplay()
     {
-        
         player1.GetComponent<PlayerInteraction>().enabled = false;
-        player1.GetComponent<PlayerMovement>().enabled = false;
+        player1.GetComponentInChildren<PlayerMovement>().enabled = false;
         player2.GetComponent<PlayerInteraction>().enabled = false;
-        player2.GetComponent<PlayerMovement>().enabled = false;
+        player2.GetComponentInChildren<PlayerMovement>().enabled = false;
     }
 
     public void UnpauseGameplay()
     {
         
         player1.GetComponent<PlayerInteraction>().enabled = true;
-        player1.GetComponent<PlayerMovement>().enabled = true;
+        player1.GetComponentInChildren<PlayerMovement>().enabled = true;
         player2.GetComponent<PlayerInteraction>().enabled = true;
-        player2.GetComponent<PlayerMovement>().enabled = true;
+        player2.GetComponentInChildren<PlayerMovement>().enabled = true;
     }
 }

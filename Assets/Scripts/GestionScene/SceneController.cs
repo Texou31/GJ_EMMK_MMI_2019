@@ -24,11 +24,13 @@ public class SceneController : MonoBehaviour
 
     public void GoToNextLevel()
     {
+        Debug.Log("Next level call !");
         SceneManager.LoadScene(SceneManager.GetSceneByName(nextSceneName).buildIndex);
     }
 
     public void Reload()
     {
+        Debug.Log("Reload call !");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
