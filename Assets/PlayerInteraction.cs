@@ -59,6 +59,7 @@ public class PlayerInteraction : MonoBehaviour
         TapisController tapis = target.GetComponent<TapisController>();
         if (tapis != null)
         {
+            Debug.Log("Je prends un tapis !");
             tapis.PickUp(this.gameObject);
             isHoldingObject = true;
             pickedUpTapis = tapis;
@@ -67,13 +68,17 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TryToDrop()
     {
+        Debug.Log("On va essayer de poser un tapis.");
         if (pickedUpTapis != null)
         {
+            Debug.Log("J'ai bien un tapis à poser !");
             if (pickedUpTapis.CanPutDown(this.gameObject.transform.position, GetDirection()))
             {
+                Debug.Log("J'ai bien la place de le poser !!");
                 pickedUpTapis.PutDown(this.gameObject.transform.position, GetDirection());
                 isHoldingObject = false;
                 pickedUpTapis = null;
+                Debug.Log("Posons le tapis.");
             } else
             {
                 FailToDrop();

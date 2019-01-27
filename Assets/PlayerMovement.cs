@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour {
             rightCol.enabled = false;
             leftCol.enabled = true;
         }
-        Debug.Log("updateCollider direction = " + direction);
+        //Debug.Log("updateCollider direction = " + direction);
     }
 
     private void UpdateSprites()

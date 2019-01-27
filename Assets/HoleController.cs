@@ -11,7 +11,9 @@ public class HoleController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        print(other.gameObject.tag);
         if(other.gameObject.tag.Equals("Carpet")){
+            Debug.Log("Moi, " + name + " viens d'être recouvert !!");
             tag = "Untagged";
         }
     }
