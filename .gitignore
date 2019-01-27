@@ -3,6 +3,7 @@ Temp/*
 Packages/manifest.json
 ProjectSettings/*
 !ProjectSettings/InputManager.asset
+!ProjectSettings/TagManager.asset
 obj/
 
 .collabignore
