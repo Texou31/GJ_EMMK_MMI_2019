@@ -19,6 +19,8 @@ public class TapisController : MonoBehaviour
     {
         holder = null;
 
+        tag = "Carpet";
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
