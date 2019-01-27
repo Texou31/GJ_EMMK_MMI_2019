@@ -7,6 +7,8 @@ public class EndGameManager : MonoBehaviour
     public GameObject victoryTab;
     public GameObject gameOverTab;
 
+    public bool canCallByKeyDown;
+
     private PauseManager pauseManager;
 
     private void Start()
@@ -16,12 +18,16 @@ public class EndGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (canCallByKeyDown)
         {
-            Victory();
-        } else if (Input.GetKeyDown(KeyCode.G))
-        {
-            GameOver();
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                Victory();
+            }
+            else if (Input.GetKeyDown(KeyCode.G))
+            {
+                GameOver();
+            }
         }
     }
 

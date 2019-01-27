@@ -9,17 +9,21 @@ public class SceneController : MonoBehaviour
 
     public static SceneController instance;
 
-    private string menuSceneName = "GIVE ME A REAL NAME"; //TODO     
+    private string menuSceneName = "MenuScene";  
 
     void Start()
     {
         instance = this;
+        if(nextSceneName == "")
+        {
+            Debug.LogError("Pas de valeur pour nextScene !");
+        }
     }
 
     public void GoToMenu()
     {
-        Debug.Log("Mauvaise valeur de variable car la scene n'a pas été définie");
-        // SceneManager.LoadScene(SceneManager.GetSceneByName(menuSceneName).buildIndex);
+        Debug.Log("Valeur définie pour le menu : " + menuSceneName);
+        SceneManager.LoadScene(SceneManager.GetSceneByName(menuSceneName).buildIndex);
     }
 
     public void GoToNextLevel()
