@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3199783491164854809}
   - component: {fileID: 3199783491164854807}
   - component: {fileID: 1942277728}
+  - component: {fileID: 6746098736432707356}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MonoBehaviour:
   decreaseSpeed: 10
   invert: 1
   fearBar: {fileID: 0}
+  endGameManager: {fileID: 0}
 --- !u!114 &1942277728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +85,20 @@ MonoBehaviour:
   player2: {fileID: 0}
   isPaused: 0
   inDialog: 0
+  isGameplayPaused: 0
+  canBePaused: 1
+--- !u!114 &6746098736432707356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199783491164854810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989500b2d5bed35458fef952c7683614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryTab: {fileID: 0}
+  gameOverTab: {fileID: 0}
+  canCallByKeyDown: 0

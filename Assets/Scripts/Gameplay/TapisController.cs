@@ -40,7 +40,7 @@ public class TapisController : MonoBehaviour
     {
         Debug.Log("CanPutDown ?");
         Debug.DrawRay(playerPosition, direction * length);
-        RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, length * 1000, LayerMask.GetMask("Obstacle"));
+        RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, length, LayerMask.GetMask("Obstacle"));
         
         return (hit.collider == null);
     }

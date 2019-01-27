@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5830065462060655091}
-  - component: {fileID: 4728175235006913388}
   - component: {fileID: 5738396168785447473}
+  - component: {fileID: 4728175235006913388}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Player 1
@@ -32,6 +32,22 @@ Transform:
   m_Father: {fileID: 6473781912942274863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5738396168785447473
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7336419598442267138}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.36}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &4728175235006913388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,22 +72,7 @@ MonoBehaviour:
   Back: {fileID: 21300002, guid: 3a148cd436835dc4193538ea4d70b140, type: 3}
   Left: {fileID: 21300004, guid: 3a148cd436835dc4193538ea4d70b140, type: 3}
   direction: 
---- !u!58 &5738396168785447473
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7336419598442267138}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.36}
-  serializedVersion: 2
-  m_Radius: 0.1
+  endGameManager: {fileID: 0}
 --- !u!1 &9067334864224536833
 GameObject:
   m_ObjectHideFlags: 0
