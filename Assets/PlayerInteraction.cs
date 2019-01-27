@@ -87,9 +87,11 @@ public class PlayerInteraction : MonoBehaviour
         // Play interdiction sound
     }
 
-    private Vector3 GetDirection()
+    private Vector2 GetDirection()
     {
-        switch (GetComponent<PlayerMovement>().GetDirection())
+        Debug.Log("GetDirection direction = " + GetComponentInChildren<PlayerMovement>().GetDirection());
+
+        switch (GetComponentInChildren<PlayerMovement>().GetDirection())
         {
             case "up":
                 return Vector2.up;
