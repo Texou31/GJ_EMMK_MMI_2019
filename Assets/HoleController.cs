@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class HoleController : MonoBehaviour
 {
-    private bool isCovered;
-
     // Start is called before the first frame update
     void Start()
     {
-        isCovered = false;
         tag = "Hole";
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag.Equals("Carpet")){
-            this.isCovered = true;
-            tag = "Floor";
+            Debug.Log("I am no longer a hole. I can be anything and I want to be Untagged!");
+            tag = "Untagged";
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.tag.Equals("Carpet")){
-            this.isCovered = false;
+            Debug.Log("You thought I was untagged but it's me, A HOLE!");
             tag = "Hole";
         }
     }
