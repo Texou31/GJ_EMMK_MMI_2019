@@ -21,7 +21,7 @@ public class TapisController : MonoBehaviour
 
         tag = "Carpet";
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -38,6 +38,7 @@ public class TapisController : MonoBehaviour
 
     public bool CanPutDown(Vector2 playerPosition, Vector2 direction) // direction et position
     {
+        Debug.Log("CanPutDown ?");
         Debug.DrawRay(playerPosition, direction * length);
         RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, length * 1000, LayerMask.GetMask("Obstacle"));
         
