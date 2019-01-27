@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     public BoxCollider2D upCol;
     public BoxCollider2D downCol;
 
+    public CircleCollider2D feet;
+
     public string horizontalAxis;
     public string verticalAxis;
 
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Start () {
         rb = GetComponentInParent<Rigidbody2D> ();
         sr = GetComponentInParent<SpriteRenderer> ();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public string GetDirection()
     {
+        Debug.Log("PlayerMovement GetDirection = " + direction);
         return direction;
     }
 
@@ -60,12 +63,14 @@ public class PlayerMovement : MonoBehaviour {
     private void UpdateColliders () {
         if (movement.y > 0.1f) // Up enabled
         {
+            direction = "up";
             upCol.enabled = true;
             downCol.enabled = false;
             rightCol.enabled = false;
             leftCol.enabled = false;
         } else if (movement.y < -0.1f) // Down enabled
         {
+            direction = "down";
             upCol.enabled = false;
             downCol.enabled = true;
             rightCol.enabled = false;
@@ -74,17 +79,20 @@ public class PlayerMovement : MonoBehaviour {
 
         if (movement.x > 0.1f) // Right enabled
         {
+            direction = "right";
             upCol.enabled = false;
             downCol.enabled = false;
             rightCol.enabled = true;
             leftCol.enabled = false;
         } else if (movement.x < -0.1f) // Left enabled
         {
+            direction = "left";
             upCol.enabled = false;
             downCol.enabled = false;
             rightCol.enabled = false;
             leftCol.enabled = true;
         }
+        //Debug.Log("updateCollider direction = " + direction);
     }
 
     private void UpdateSprites()
@@ -118,15 +126,29 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat("Speed", movement.magnitude / moveSpeed);
       }
 
-      private void OnTriggerEnter2D (Collider2D other) {
-          if (other.gameObject.tag == "Ice") {
-              isSliding = true;
-          }
-      }
+    private void OnTriggerEnter2D (Collider2D other) {
+        if (other.gameObject.tag == "Ice") {
+            isSliding = true;
+        }
+
+        if (other.gameObject.tag == "Hole"){
+            Debug.Log("GAME OVER!!!");
+        }
+
+        if (other.gameObject.tag == "Carpet"){
+            Debug.Log("Mouahahah tu n'auras pas ce tapis.");
+            other.gameObject.tag = "BlockedCarpet";
+        }
+    }
 
       private void OnTriggerExit2D (Collider2D other) {
           if (other.gameObject.tag == "Ice") {
               isSliding = false;
+          }
+
+          if (other.gameObject.tag == "BlockedCarpet"){
+              Debug.Log("Bon d'accord, je te libère le tapis.");
+              other.gameObject.tag = "Carpet";
           }
         }
 

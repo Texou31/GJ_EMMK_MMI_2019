@@ -19,15 +19,18 @@ public class TapisController : MonoBehaviour
     {
         holder = null;
 
+        tag = "Carpet";
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
     public void PickUp(GameObject newHolder)
     {
-        Debug.Log("Call pickUp");
+        Debug.Log("Aaah " + newHolder.name + " veut me prendre !");
         if (holder == null && !newHolder.GetComponent<PlayerInteraction>().isHoldingObject)
         {
+            tag = "Untagged";
             PutToInventory(newHolder);
         }
     }
@@ -42,11 +45,12 @@ public class TapisController : MonoBehaviour
 
     public void PutDown(Vector2 playerPosition, Vector2 direction)
     {
+        Debug.Log("Moi, le tapis, je vais être posé !");
+        tag = "Carpet";
         spriteRenderer.enabled = true;// Le rendre visible
         EnableCollision();// réactiver ses collisions
         holder = null;// Update son holder et isheld
         Snap(playerPosition, direction);
-        CoverHoles();
     }
 
     private void PutToInventory(GameObject newHolder)
@@ -54,24 +58,34 @@ public class TapisController : MonoBehaviour
         holder = newHolder; // dit qu'il est tenu et par qui
         DisableCollision(); // empecher ses collisions
         spriteRenderer.enabled = false; // le faire disparaitre
-        UncoverHoles();
     }
 
     private void Snap(Vector2 position, Vector2 direction)
     {
-        Debug.Log("Snap TODO !");
-    }
+        //Debug.Log("position pre-snap : X = " + position.x.ToString() + " / Y = " + position.y.ToString());
+        position = new Vector2(Mathf.Round(position.x - 0.5f) + 0.5f, Mathf.Round(position.y - 0.5f) + 0.5f);
+        //Debug.Log("position post-snap : X = " + position.x.ToString() + " / Y = " + position.y.ToString());
+       
 
-    private void CoverHoles()
-    {
-        Debug.Log("CoverHoles TODO !");
-    }
+        if (direction == Vector2.right)
+        {
+            transform.position = new Vector2(position.x + length / 2f + 0.5f, position.y);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        } else if(direction == Vector2.left)
+        {
+            transform.position = new Vector2(position.x - length / 2f - 0.5f, position.y);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        } else if (direction == Vector2.up)
+        {
+            transform.position = new Vector2(position.x, position.y + length / 2f + 0.5f);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        } else if (direction == Vector2.down)
+        {
+            transform.position = new Vector2(position.x, position.y - length / 2f - 0.5f);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
 
-    private void UncoverHoles()
-    {
-        Debug.Log("UncoverHoles TODO !");
     }
-    
 
     #region COLLIDERS
 
@@ -105,29 +119,4 @@ public class TapisController : MonoBehaviour
     }
     */
     #endregion
-  
-    /*
-    private void setPositionOffset()
-    {
-        PlayerMovement holderMovement = holder.GetComponent<PlayerMovement>();
-        switch (holderMovement.getDirection())
-        {
-            case "up":
-                transform.eulerAngles = new Vector3(0, 0, 90);
-                transform.localPosition = new Vector3(0, 1.5f, 0);
-                break;
-            case "down":
-                transform.eulerAngles = new Vector3(0, 0, 90);
-                transform.localPosition = new Vector3(0, -1.5f, 0);
-                break;
-            case "right":
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                transform.localPosition = new Vector3(1.5f, 0, 0);
-                break;
-            default: // left
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                transform.localPosition = new Vector3(-1.5f, 0, 0);
-                break;
-        }
-    }*/
 }
