@@ -12,11 +12,13 @@ public class PlayerInteraction : MonoBehaviour
 
     // List of interactable objects (their controller scripts)
     private List<string> interactableObjectsTags;
+    private string currentInteractableObject;
     private TapisController pickedUpTapis;
 
     public PlayerInteraction(){
         interactableObjectsTags = new List<string>();
         interactableObjectsTags.Add("Carpet");
+        interactableObjectsTags.Add("Exit");
 
         pickedUpTapis = null;
     }
@@ -41,9 +43,11 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (target == null && interactableObjectsTags.Contains(col.gameObject.tag)) // Cause possible de bug // TODO le check
-        {
-            target = col.gameObject;
-        }
+            {
+                target = col.gameObject;
+                currentInteractableObject = col.gameObject.tag;
+            }
+        
     }
 
     // Prevent trigger after leaving trigger zone
@@ -60,12 +64,14 @@ public class PlayerInteraction : MonoBehaviour
     #region INTERACTIONS
     private void InteractWithTarget()
     {
+        if(currentInteractableObject.Equals("Exit")){
+            Debug.Log("Voilà la sortie !");
+        }
         /*
          * Interact with the target object. Get component to know what to do.
          */
-        TapisController tapis = target.GetComponent<TapisController>();
-        if (tapis != null)
-        {
+         if(currentInteractableObject.Equals("Carpet")){
+            TapisController tapis = target.GetComponent<TapisController>();
             Debug.Log("Je prends un tapis !");
             tapis.PickUp(this.gameObject);
             isHoldingObject = true;

@@ -9,9 +9,7 @@ public class SceneController : MonoBehaviour
 
     public static SceneController instance;
 
-    private string menuSceneName = "GIVE ME A REAL NAME"; //TODO 
-
-    
+    private string menuSceneName = "GIVE ME A REAL NAME"; //TODO     
 
     void Start()
     {
