@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public string InteractAxeName;
-   
-    public EndGameManager endGameManager;
+
+    public GameObject endGameObject;
+    private EndGameManager endGameManager;
 
     public bool isHoldingObject = false;
     private GameObject target = null;
@@ -27,6 +28,11 @@ public class PlayerInteraction : MonoBehaviour
         interactableObjectsTags.Add("Toy");
 
         pickedUpTapis = null;
+    }
+
+    public void Start()
+    {
+        endGameManager = endGameObject.GetComponent<endGameManager>();
     }
     
     private void Update()

@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
         instance = this;
         if(nextSceneName == "")
         {
-            Debug.Log("Pas de valeur pour nextScene !");
+            Debug.LogError("Pas de valeur pour nextScene !");
             nextSceneName = SceneManager.GetActiveScene().name;
         }
     }

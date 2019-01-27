@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6272307438120707253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560549817714351100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ce9be880059de44807361680eb40a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAxeName: Interact2
+  endGameManager: {fileID: 0}
+  isHoldingObject: 0
 --- !u!1001 &6799665205863273213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,8 +137,20 @@ PrefabInstance:
       propertyPath: verticalAxis
       value: Vertical2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 133692206563166735, guid: 5920d59167fae1144882f20f8d1bbd8c,
+        type: 3}
+      propertyPath: InteractAxeName
+      value: Interact2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 133692206563166735, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5920d59167fae1144882f20f8d1bbd8c, type: 3}
+--- !u!1 &2560549817714351100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9067334864224536833, guid: 5920d59167fae1144882f20f8d1bbd8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6799665205863273213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &4289128484765854821 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7339540124531310232, guid: 5920d59167fae1144882f20f8d1bbd8c,

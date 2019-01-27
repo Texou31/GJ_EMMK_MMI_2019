@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5830065462060655091}
   - component: {fileID: 4728175235006913388}
+  - component: {fileID: 2553255483556644600}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Player 1
@@ -88,7 +89,7 @@ GameObject:
   - component: {fileID: 6338537199495655696}
   - component: {fileID: 8820445994151124203}
   - component: {fileID: 5334209056899229302}
-  - component: {fileID: 8708551441617368273}
+  - component: {fileID: 133692206563166735}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -319,7 +320,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8708551441617368273
+--- !u!114 &133692206563166735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,8 +329,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9067334864224536833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f9e752959a5a6468f21209eb0a32f6, type: 3}
+  m_Script: {fileID: 11500000, guid: f6ce9be880059de44807361680eb40a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractAxeName: Interact1
+  endGameManager: {fileID: 0}
   isHoldingObject: 0
