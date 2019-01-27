@@ -802,12 +802,12 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[1].text
-      value: '<Alphonse> : Ne marche pas sur ces zones du parquet.'
+      value: "<Alphonse> : Ne marche pas sur ces zones du parquet, elles sont abim\xE9es."
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[2].text
-      value: "<Alphonse> : Je suis sur qu'elles grinceraient et r\xE9veilleraient
+      value: "<Alphonse> : Je suis s\xFBr qu'elles grinceraient et r\xE9veilleraient
         le voisin."
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
@@ -5325,11 +5325,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.61
       objectReference: {fileID: 0}
-    - target: {fileID: 9078715956030417768, guid: 871c2e7b30a558443a475fedb35ffc8a,
-        type: 3}
-      propertyPath: nextSceneName
-      value: Level 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2501682357088806650, guid: 871c2e7b30a558443a475fedb35ffc8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5339,6 +5334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078715956030417768, guid: 871c2e7b30a558443a475fedb35ffc8a,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871c2e7b30a558443a475fedb35ffc8a, type: 3}
@@ -5584,7 +5584,7 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
@@ -5594,13 +5594,12 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[4].text
-      value: "<Alphonse> : J'en suis sur. Je vois un de nos jouets au fond de la pi\xE8ce
-        !"
+      value: "<Alphonse> : J'en suis s\xFBr. "
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[0].text
-      value: "<Alphonse> : Pas de bruit, sinon on va r\xE9veiller le voisin."
+      value: "<Alphonse> : Shhh... Pas de bruit, sinon on va r\xE9veiller le voisin."
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
@@ -5610,11 +5609,17 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[2].text
-      value: "<Alphonse> : Reste pr\xE8s de moi et tout ira bien."
+      value: "<Alphonse> : L\xE0, reste pr\xE8s de moi et tout ira bien."
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[5].text
+      value: "<Alphonse> : Oh Emi ! Regarde ! Je vois un de nos jouets au fond de
+        la pi\xE8ce !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
+        type: 3}
+      propertyPath: m_dialogWithPlayer.Array.data[6].text
       value: "<Alphonse> : Ton doudou doit bien \xEAtre quelque part ici."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6079,12 +6084,12 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[0].text
-      value: "<Alphonse> : Ce tapis \xE0 l'air \xE9pais..."
+      value: "<Alphonse> : Mhm... Ce tapis a l'air \xE9pais..."
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[1].text
-      value: "<Emilie> : Un tapis ! Je suis s\xFBre qu'il peut boucher les trous Alph
+      value: "<Emilie> : Un tapis ! Alph, je suis s\xFBre qu'il peut boucher les trous
         !"
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
@@ -6107,7 +6112,7 @@ PrefabInstance:
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
       propertyPath: m_dialogWithPlayer.Array.data[6].text
-      value: '<Alphonse> : On va pouvoir passer finalement !'
+      value: '<Alphonse> : Super, on va pouvoir passer finalement !'
       objectReference: {fileID: 0}
     - target: {fileID: 1955051341832852825, guid: d63e3e1102d69944ea232b02ea1e19c3,
         type: 3}
