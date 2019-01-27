@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -64,12 +65,16 @@ public class PlayerInteraction : MonoBehaviour
     #region INTERACTIONS
     private void InteractWithTarget()
     {
-        if(currentInteractableObject.Equals("Exit")){
-            Debug.Log("Voilà la sortie !");
-        }
         /*
          * Interact with the target object. Get component to know what to do.
          */
+        if(currentInteractableObject.Equals("Exit")){
+            /*
+            * Interacting with the exit, leaving the level
+            */
+            SceneManager.LoadScene(SceneController.instance.nextSceneName);
+        }
+        
          if(currentInteractableObject.Equals("Carpet")){
             TapisController tapis = target.GetComponent<TapisController>();
             Debug.Log("Je prends un tapis !");
