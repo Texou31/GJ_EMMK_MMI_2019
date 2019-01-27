@@ -21,11 +21,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement = Vector2.zero;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -83,27 +85,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateSprites()
     {
-        if (movement.y > 0.1f)  // Up enabled
+        if(movement.magnitude > 0.2)
         {
-            sr.sprite = Back;
-            sr.flipX = false;
-        }
-        else if (movement.y < -0.1f) // Down enabled
-        {
-            sr.sprite = Face;
-            sr.flipX = false;
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            {
+                if (movement.x > 0.1)
+                {
+                    animator.SetTrigger("GoRight");
+                }
+                else if (movement.x < 0.1)
+                {
+                    animator.SetTrigger("GoLeft");
+                }
+            }
+            else
+            {
+                if (movement.y > 0.1)
+                {
+                    animator.SetTrigger("GoUp");
+                }
+                else if (movement.y < 0.1)
+                {
+                    animator.SetTrigger("GoDown");
+                }
+            }
         }
 
-        if (movement.x > 0.1f)  // Right enabled
-        {
-            sr.sprite = Left;
-            sr.flipX = true;
-        }
-        else if (movement.x < -0.1f)    // Left enabled
-        {
-            sr.sprite = Left;
-            sr.flipX = false;
-        }
+        animator.SetFloat("Speed", movement.magnitude / moveSpeed);
     }
 
     #endregion
