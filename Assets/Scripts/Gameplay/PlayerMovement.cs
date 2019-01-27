@@ -19,13 +19,14 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite Back;
     public Sprite Left;
 
+    public string direction;
+    public EndGameManager endGameManager;
+
     private Vector2 movement = Vector2.zero;
     private Vector2 lastMovement = Vector2.zero;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
-
-    public string direction;
 
     private bool isSliding = false;
 
@@ -132,7 +133,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "Hole"){
-            Debug.Log("GAME OVER!!!");
+            Debug.Log("GameOver");
+            endGameManager.GameOver();
         }
 
         if (other.gameObject.tag == "Carpet"){

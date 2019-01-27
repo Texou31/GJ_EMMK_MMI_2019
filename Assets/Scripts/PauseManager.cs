@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour
 
     public bool isPaused;
     public bool inDialog;
+    public bool isGameplayPaused;
 
     public bool canBePaused = true;
 
@@ -19,6 +20,7 @@ public class PauseManager : MonoBehaviour
     {
         isPaused = false;
         inDialog = false;
+        isGameplayPaused = false;
         canBePaused = true;
     }
 
@@ -77,15 +79,18 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGameplay()
     {
+        isGameplayPaused = true;
         player1.GetComponent<PlayerInteraction>().enabled = false;
         player1.GetComponentInChildren<PlayerMovement>().enabled = false;
+        player1.GetComponent<Animator>().SetFloat("Speed", 0f);
         player2.GetComponent<PlayerInteraction>().enabled = false;
         player2.GetComponentInChildren<PlayerMovement>().enabled = false;
+        player2.GetComponent<Animator>().SetFloat("Speed", 0f);
     }
 
     public void UnpauseGameplay()
     {
-        
+        isGameplayPaused = false;
         player1.GetComponent<PlayerInteraction>().enabled = true;
         player1.GetComponentInChildren<PlayerMovement>().enabled = true;
         player2.GetComponent<PlayerInteraction>().enabled = true;
