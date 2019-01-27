@@ -51,7 +51,7 @@ public class TapisController : MonoBehaviour
         tag = "Carpet";
         spriteRenderer.enabled = true;// Le rendre visible
         EnableCollision();// réactiver ses collisions
-        holder = null;// Update son holder et isheld
+        holder = null;// Update son holder
         Snap(playerPosition, direction);
     }
 
